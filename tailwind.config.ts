@@ -1,3 +1,4 @@
+import flowbitePlugin from "flowbite/plugin";
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
@@ -6,6 +7,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "/node_modules/flowbite-react/**/*.js",
     "./src/app/globals.css",
   ],
   theme: {
@@ -43,7 +45,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [tailwindcssAnimate, flowbitePlugin],
 };
 
 export default config;
