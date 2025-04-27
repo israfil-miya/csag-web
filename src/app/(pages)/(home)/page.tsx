@@ -12,7 +12,6 @@ import {
   MoveRight,
   Phone,
   Twitter,
-  X,
   Youtube,
 } from "lucide-react";
 import moment from "moment-timezone";
