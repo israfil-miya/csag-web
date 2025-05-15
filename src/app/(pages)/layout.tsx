@@ -1,3 +1,5 @@
+import Footer from "@/app/components/Footer";
+import Nav from "@/app/components/Nav";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,5 +13,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <main suppressHydrationWarning={true}>{children}</main>;
+  return (
+    <main suppressHydrationWarning={true}>
+      <Nav />
+      {children}
+      <Footer />
+    </main>
+  );
 }
