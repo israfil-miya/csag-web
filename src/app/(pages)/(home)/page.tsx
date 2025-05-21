@@ -501,8 +501,9 @@ function Nav() {
         {/* Copyright */}
         <div className="mt-8 py-4 border-t border-gray-300 text-center">
           <p className="text-sm">
-            © Copyright {moment().year()} Child Survival Aid Ghana (CSAG). All
-            rights reserved
+            Child Survival Aid Ghana is a registered National Non-Profit
+            Organization (Reg. No.DSW/1927) and a company limited by guarantee
+            (Reg. No.CG048960623). Our Tax ID No. is COO63018292
           </p>
         </div>
       </div>
