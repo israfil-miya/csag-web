@@ -203,7 +203,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <span className="leading-relaxed text-lg mt-4 text-center flex align-middle justify-center">
+        <span className="leading-relaxed text-lg mt-6 text-center flex align-middle justify-center">
           <Link
             href={"/about"}
             className="text-accent hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-accent text-center flex gap-1 items-center font-semibold"
@@ -218,13 +218,30 @@ function Home() {
         <div className="w-full h-[2px] bg-gray-300" />
       </div>
 
+      {/* ongoing campaigns */}
+
+      <div className="flex flex-col border-y-2 border-slate-300 items-center justify-center bg-gray-100 text-gray-800 py-10 mt-16">
+        <div className="container">
+          <div className="text-center leading-snug">
+            <h3 className="text-3xl  font-bold mb-2 uppercase tracking-wide">
+              Ongoing Campaigns
+            </h3>
+            {/* <p className="text-md text-gray-200 tracking-wide">
+            Together, we&apos;ve helped build brighter futures for children
+            across Ghana
+          </p> */}
+          </div>
+          {/* campaign card */}
+        </div>
+      </div>
+
       {/* Featured Partner */}
       <div className="flex flex-col mt-16 text-gray-800 w-full">
         <div className="text-center leading-snug">
           <h3 className="text-3xl font-bold mb-2 uppercase tracking-wide">
             Featured Partner
           </h3>
-          <p className="text-md text-gray-700 tracking-wide">
+          <p className="text-md text-gray-700 tracking-wide px-4">
             Together, we&apos;ve helped build brighter futures for children
             across Ghana
           </p>
@@ -256,12 +273,16 @@ function Home() {
               also empowering communities to build a resilient and promising
               future for the generations to come.
             </p>
-            <Link
-              href="/partners"
-              className="text-accent flex items-center gap-1 hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-accent font-semibold mt-4"
-            >
-              Explore our partners <MoveRight size={16} />
-            </Link>
+            <p className="mt-4 inline-block">
+              <Link
+                href="/partners"
+                className="text-accent hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-accent font-semibold"
+              >
+                <span className="flex gap-1 items-center">
+                  Explore our partners <MoveRight size={16} />
+                </span>
+              </Link>
+            </p>
           </div>
         </div>
       </div>

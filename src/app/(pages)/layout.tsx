@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main suppressHydrationWarning={true}>
+    <main suppressHydrationWarning={true} className="min-h-screen">
       <Nav />
       {children}
       <Footer />
