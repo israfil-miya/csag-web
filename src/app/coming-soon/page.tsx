@@ -50,14 +50,14 @@ export default function Home() {
               <Link
                 href="mailto:csag2018@gmail.com"
                 target="_blank"
-                className="px-6 py-3 bg-[#0394af] hover:bg-[#038ea8] transition rounded-sm text-gray-100 font-medium inline-block"
+                className="px-6 py-3 bg-[#0394af] hover:bg-[#038ea8] transition rounded-minimal text-gray-100 font-medium inline-block"
               >
                 Contact Us
               </Link>
               <Link
                 target="_blank"
                 href="https://www.globalgiving.org/projects/empower-a-child-through-education-in-rural-ghana/"
-                className="px-6 py-3 bg-[#f2d229] hover:bg-yellow-400 transition rounded-sm text-black font-medium inline-block"
+                className="px-6 py-3 bg-[#f2d229] hover:bg-yellow-400 transition rounded-minimal text-black font-medium inline-block"
               >
                 Donate
               </Link>

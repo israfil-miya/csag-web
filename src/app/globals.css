@@ -20,15 +20,29 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Flatter design utilities */
+  .flat-card {
+    @apply border border-gray-200 hover:border-gray-300 transition-colors duration-200;
+  }
+
+  .flat-button {
+    @apply rounded-minimal transition-all duration-200 hover:translate-y-[-1px];
+  }
+
+  .flat-shadow {
+    box-shadow: none;
+  }
 }
 
 html,
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: hsl(var(--background));
   color: hsl(var(--foreground));
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 :root:has(.disable-page-scroll) {
@@ -49,6 +63,15 @@ body {
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+
+    /* New color palette with #006172 as primary */
+    --primary-blue: 189 100% 22%;
+    --primary-blue-foreground: 0 0% 100%;
+    --primary-blue-light: 189 100% 32%;
+    --primary-blue-dark: 189 100% 15%;
+    --accent-orange: 25 95% 53%;
+    --accent-orange-light: 25 95% 63%;
+    --accent-orange-dark: 25 95% 43%;
   }
 
   body {
@@ -67,7 +90,7 @@ body {
   }
 
   .ProseMirror a {
-    color: #3b82f6; /* Tailwind's blue-500 */
+    color: #006172; /* Primary blue color */
     text-decoration: none;
     text-decoration-skip-ink: auto;
     text-underline-offset: 2px;

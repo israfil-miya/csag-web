@@ -67,52 +67,63 @@ export default function CauseCarousel() {
   };
 
   return (
-    <div className="py-20 px-4 md:px-8 bg-background">
+    <div className="py-24 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Our Causes
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Support Our <span className="text-csag-primary">Active Causes</span>
           </h2>
-          <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-3xl mx-auto">
-            Support our ongoing initiatives to improve education and create
-            opportunities for children in Ghana.
+          <div className="w-24 h-1 bg-gradient-to-r from-csag-primary to-csag-accent mx-auto mb-8 rounded-minimal"></div>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed mb-4">
+            Every donation directly impacts the lives of children in Ghana.
+            Choose a cause that resonates with you and help us create lasting
+            change in education.
           </p>
+          <div className="flex items-center justify-center space-x-8 text-sm text-gray-500 mt-8">
+            <div className="flex items-center">
+              <div className="w-3 h-3 bg-csag-primary rounded-full mr-2"></div>
+              <span>100% of donations go to the cause</span>
+            </div>
+            <div className="flex items-center">
+              <div className="w-3 h-3 bg-csag-accent rounded-full mr-2"></div>
+              <span>Monthly impact reports</span>
+            </div>
+          </div>
         </div>
 
         {/* Carousel Container */}
-        <div className="max-w-5xl mx-auto relative">
+        <div className="max-w-6xl mx-auto relative">
           {/* Slides */}
-          <div className="overflow-hidden rounded-lg shadow-lg">
+          <div className="overflow-hidden rounded-lg">
             <div
-              className="flex transition-transform duration-500 ease-in-out"
+              className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {causes.map((cause) => (
                 <div
                   key={cause.id}
-                  className="min-w-full bg-background rounded-lg overflow-hidden"
+                  className="min-w-full bg-white rounded-lg overflow-hidden"
                 >
-                  <div className="md:flex">
-                    <div className="md:w-2/3 p-6 md:p-8">
-                      <div className="inline-block bg-secondary/15 px-3 py-1 text-xs font-semibold text-secondary rounded mb-4">
+                  <div className="lg:flex">
+                    <div className="lg:w-2/3 p-8 lg:p-12">
+                      <div className="inline-block bg-csag-accent/15 px-4 py-2 text-sm font-semibold text-csag-accent-dark rounded-minimal mb-6">
                         FUNDRAISING
                       </div>
-                      <h3 className="text-2xl font-bold text-foreground mb-3">
+                      <h3 className="text-3xl font-bold text-gray-900 mb-4">
                         {cause.title}
                       </h3>
-                      <p className="text-muted-foreground mb-6">
+                      <p className="text-gray-600 mb-8 text-lg leading-relaxed">
                         {cause.description}
                       </p>
 
                       {/* Progress Stats */}
-                      <div className="mb-4">
-                        <div className="text-4xl font-bold text-foreground mb-2">
+                      <div className="mb-8">
+                        <div className="text-5xl font-bold text-csag-primary mb-4">
                           {getProgressPercentage(cause.raised, cause.goal)}%
                         </div>
-                        <div className="w-full bg-muted rounded-full h-2.5 mb-2">
+                        <div className="w-full bg-gray-200 rounded-minimal h-3 mb-4">
                           <div
-                            className="bg-secondary h-2.5 rounded-full"
+                            className="bg-gradient-to-r from-csag-primary to-csag-accent h-3 rounded-minimal transition-all duration-500"
                             style={{
                               width: `${getProgressPercentage(
                                 cause.raised,
@@ -121,11 +132,11 @@ export default function CauseCarousel() {
                             }}
                           ></div>
                         </div>
-                        <div className="flex justify-between text-sm">
-                          <div className="text-primary font-medium">
+                        <div className="flex justify-between text-base">
+                          <div className="text-csag-primary font-semibold">
                             Raised: ${cause.raised.toLocaleString()}
                           </div>
-                          <div className="text-muted-foreground">
+                          <div className="text-gray-500">
                             Goal: ${cause.goal.toLocaleString()}
                           </div>
                         </div>
@@ -134,18 +145,18 @@ export default function CauseCarousel() {
                       {/* Donate Button */}
                       <Link
                         href="/donate"
-                        className="mt-4 inline-block bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-3 px-6 rounded shadow transition duration-200"
+                        className="inline-block bg-csag-accent hover:bg-csag-accent-light text-white font-bold py-4 px-8 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
                       >
                         DONATE NOW
                       </Link>
                     </div>
 
-                    <div className="md:w-1/3">
+                    <div className="lg:w-1/3">
                       <div className="h-full relative">
                         <Image
                           src={cause.image || "/placeholder.svg"}
                           alt={`${cause.title} campaign image`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                           width={400}
                           height={300}
                         />
@@ -160,27 +171,29 @@ export default function CauseCarousel() {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 md:-translate-x-6 bg-background hover:bg-muted text-foreground rounded-full p-2 shadow-md z-10 transition-all"
+            className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 md:-translate-x-8 bg-white hover:bg-gray-50 text-csag-primary rounded-minimal p-3 z-10 transition-all duration-200 hover:translate-y-[-2px]"
             aria-label="Previous slide"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 md:translate-x-6 bg-background hover:bg-muted text-foreground rounded-full p-2 shadow-md z-10 transition-all"
+            className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 md:translate-x-8 bg-white hover:bg-gray-50 text-csag-primary rounded-minimal p-3 z-10 transition-all duration-200 hover:translate-y-[-2px]"
             aria-label="Next slide"
           >
             <ChevronRight className="h-6 w-6" />
           </button>
 
           {/* Navigation Dots */}
-          <div className="flex justify-center items-center space-x-2 mt-8">
+          <div className="flex justify-center items-center space-x-3 mt-8">
             {causes.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`h-1 rounded-full transition-all ${
-                  currentSlide === index ? "w-8 bg-secondary" : "w-2 bg-muted"
+                className={`h-2 rounded-minimal transition-all duration-300 ${
+                  currentSlide === index
+                    ? "w-8 bg-gradient-to-r from-csag-primary to-csag-accent"
+                    : "w-2 bg-gray-300 hover:bg-gray-400"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               ></button>
@@ -188,14 +201,14 @@ export default function CauseCarousel() {
           </div>
         </div>
 
-        {/* View All Link */}
-        <div className="text-center mt-12">
+        {/* Call to Action Section */}
+        <div className="text-center mt-16">
           <Link
-            href="/causes"
-            className="inline-flex items-center text-primary font-medium hover:text-accent transition-colors"
+            href="/our-work"
+            className="inline-flex items-center text-csag-primary font-semibold hover:text-csag-primary-dark transition-colors group"
           >
-            View all causes
-            <ArrowRight className="h-4 w-4 ml-1" />
+            Explore all active causes
+            <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>
