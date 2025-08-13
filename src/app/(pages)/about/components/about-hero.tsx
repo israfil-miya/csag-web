@@ -37,7 +37,7 @@ export default function AboutHero() {
                 DONATE NOW
               </Link>
               <Link
-                href="#our-story"
+                href="#story"
                 className="bg-transparent hover:bg-white/10 text-white border-2 border-white font-bold py-4 px-10 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
               >
                 LEARN MORE

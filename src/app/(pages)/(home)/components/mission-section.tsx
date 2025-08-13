@@ -1,6 +1,7 @@
 import { ArrowRight, BookOpen, Building2, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { mission, vision } from "../../about/content/about-content";
 
 export default function MissionSection() {
   return (
@@ -12,8 +13,7 @@ export default function MissionSection() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-csag-primary to-csag-accent mx-auto mb-8 rounded-minimal"></div>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            We believe education is the most powerful tool to break the cycle of
-            poverty and create lasting change in communities.
+            {mission}
           </p>
         </div>
 
@@ -24,8 +24,8 @@ export default function MissionSection() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Empower</h3>
             <p className="text-gray-600 leading-relaxed">
-              Empowering underprivileged children in rural Ghana through access
-              to quality education and resources they need to succeed.
+              Free access, safe learning spaces and supportive adults accelerate
+              literacy and confidence.
             </p>
           </div>
 
@@ -38,9 +38,8 @@ export default function MissionSection() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Educate</h3>
             <p className="text-gray-600 leading-relaxed">
-              Providing learning resources, training local educators, and
-              building school infrastructure to create effective learning
-              environments.
+              Relevant books, digital tools, teacher coaching and community
+              engagement strengthen classrooms.
             </p>
           </div>
 
@@ -53,8 +52,8 @@ export default function MissionSection() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Transform</h3>
             <p className="text-gray-600 leading-relaxed">
-              Breaking the cycle of poverty and paving the way for a brighter,
-              more equal future for communities across Ghana.
+              Sustained learning outcomes enable children to rise above poverty
+              and contribute to thriving communities.
             </p>
           </div>
         </div>
@@ -69,17 +68,15 @@ export default function MissionSection() {
                 Our <span className="text-csag-accent">Approach</span>
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                We believe education is the most powerful tool to break the
-                cycle of poverty, and we work tirelessly to provide learning
-                resources, train local educators, build school infrastructure,
-                and foster community support.
+                Our approach blends resource provision, educator empowerment and
+                community mobilization. We co-design solutions with schools so
+                interventions are practical and sustained.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed text-lg">
-                By equipping children with knowledge and opportunity, we pave
-                the way for a brighter, more equal future — one child at a time.
+                Vision: {vision}
               </p>
               <Link
-                href="/approach"
+                href="/about#approach"
                 className="inline-flex items-center text-csag-primary font-semibold hover:text-csag-primary-dark transition-colors group"
               >
                 Learn more about our approach

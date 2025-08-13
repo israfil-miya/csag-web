@@ -3,7 +3,7 @@
 import { ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { cn } from "../lib/utils";
 
 import { usePathname } from "next/navigation";
@@ -48,6 +48,26 @@ function NavLink(
 function Nav() {
   const pathname = usePathname();
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+
+  // Close the About dropdown when clicking outside or pressing Escape
+  useEffect(() => {
+    if (!isAboutDropdownOpen) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (aboutRef.current && !aboutRef.current.contains(e.target as Node)) {
+        setIsAboutDropdownOpen(false);
+      }
+    };
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsAboutDropdownOpen(false);
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKey);
+    };
+  }, [isAboutDropdownOpen]);
 
   return (
     <div className="flex items-center align-middle justify-between text-foreground p-4 px-6 bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
@@ -66,12 +86,12 @@ function Nav() {
           <span className="md:hidden block">CSAG</span>
         </h2>
       </div>
-      <div className="items-center text-lg gap-x-16 uppercase font-semibold xl:flex hidden">
+      <div className="items-center text-lg gap-x-16 font-semibold xl:flex hidden">
         <nav className="space-x-8 flex flex-row items-center">
           {NavLink("/", "Home", pathname)}
-          <div className="relative">
+          <div className="relative" ref={aboutRef}>
             {NavLink("/about", "About Us", pathname, true, () =>
-              setIsAboutDropdownOpen(!isAboutDropdownOpen)
+              setIsAboutDropdownOpen((o) => !o)
             )}
             {isAboutDropdownOpen && (
               <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-minimal border border-gray-100 py-2 z-50">
@@ -80,14 +100,14 @@ function Nav() {
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-csag-primary/10 hover:text-csag-primary transition-colors"
                   onClick={() => setIsAboutDropdownOpen(false)}
                 >
-                  Our Story
+                  Who We Are
                 </Link>
                 <Link
                   href="/team"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-csag-primary/10 hover:text-csag-primary transition-colors"
                   onClick={() => setIsAboutDropdownOpen(false)}
                 >
-                  Our Team
+                  Leadership & Team
                 </Link>
               </div>
             )}

@@ -26,7 +26,7 @@ export default function SponsorSection() {
                 className="h-36 w-auto mx-auto hover:scale-105 transition-transform duration-300"
                 width={240}
                 height={140}
-                src="/images/partners/Gov_IntDev_Std_Colour.jpg"
+                src="/images/partners/govt_of_ireland.jpg"
                 alt="Featured sponsor logo"
               />
               {/* </div> */}
@@ -37,19 +37,14 @@ export default function SponsorSection() {
               </h3>
               <p className="text-gray-600 mb-8 leading-relaxed text-lg">
                 We are proud to partner with the Government of Ireland, whose
-                support has been instrumental in our mission to provide quality
-                education and healthcare to children in Ghana. Their commitment
-                to global development aligns with our vision of a world where
-                every child has the opportunity to grow, learn, and prosper.
-                Through this invaluable collaboration, we are implementing
-                innovative projects that enhance local educational systems,
-                fortify community healthcare, and create sustainable economic
-                opportunities. By working together, we are not only bridging the
-                opportunity gap but also empowering communities to build a
-                resilient and promising future for the generations to come.
+                support helps us provide quality education and healthcare to
+                children in Ghana. Together, we implement projects that
+                strengthen schools, improve community healthcare, and create
+                sustainable opportunities, empowering communities to build a
+                brighter future.
               </p>
               <Link
-                href="/partners/global-education-fund"
+                href="/partners/govt-of-ireland"
                 className="inline-flex items-center text-csag-primary font-semibold hover:text-csag-primary-dark transition-colors group"
               >
                 Learn more about our partnership

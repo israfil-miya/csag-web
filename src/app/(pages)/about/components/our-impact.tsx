@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Heart, School, Users } from "lucide-react";
+import { ArrowRight, BookOpen, School, Users } from "lucide-react";
 import Link from "next/link";
 
 export default function OurImpact() {
@@ -11,75 +11,63 @@ export default function OurImpact() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-20 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-16 animate-fade-in max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Our <span className="text-csag-accent-light">Impact</span>
           </h2>
           <div className="w-24 h-1 bg-csag-accent-light mx-auto mb-8 rounded-minimal"></div>
-          <p className="max-w-3xl mx-auto text-lg leading-relaxed opacity-95">
-            Through your support, we've been able to make a significant
-            difference in the lives of children and communities across Ghana.
+          <p className="text-lg leading-relaxed opacity-95">
+            Our initiatives have reached thousands of young learners. We provide
+            quality education that empowers them to achieve their full
+            potential.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mb-12">
-          <div className="bg-white/10 p-8 rounded-lg backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 animate-slide-up">
-            <div className="bg-csag-accent/20 w-16 h-16 mx-auto rounded-lg flex items-center justify-center mb-4">
-              <Users className="h-8 w-8 text-csag-accent-light" />
-            </div>
-            <div className="text-4xl md:text-5xl font-bold mb-4 text-csag-accent-light">
-              875,000+
-            </div>
-            <p className="uppercase text-sm tracking-wider font-medium text-white">
-              Children reached through our educational programs
-            </p>
-          </div>
-
-          <div
-            className="bg-white/10 p-8 rounded-lg backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 animate-slide-up"
-            style={{ animationDelay: "0.1s" }}
-          >
-            <div className="bg-csag-accent/20 w-16 h-16 mx-auto rounded-lg flex items-center justify-center mb-4">
-              <School className="h-8 w-8 text-csag-accent-light" />
-            </div>
-            <div className="text-4xl md:text-5xl font-bold mb-4 text-csag-accent-light">
-              600+
-            </div>
-            <p className="uppercase text-sm tracking-wider font-medium text-white">
-              Schools supported through construction and renovation
-            </p>
-          </div>
-
-          <div
-            className="bg-white/10 p-8 rounded-lg backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <div className="bg-csag-accent/20 w-16 h-16 mx-auto rounded-lg flex items-center justify-center mb-4">
-              <BookOpen className="h-8 w-8 text-csag-accent-light" />
-            </div>
-            <div className="text-4xl md:text-5xl font-bold mb-4 text-csag-accent-light">
-              156,700+
-            </div>
-            <p className="uppercase text-sm tracking-wider font-medium text-white">
-              Adults empowered through skills training
-            </p>
-          </div>
-
-          <div
-            className="bg-white/10 p-8 rounded-lg backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 animate-slide-up"
-            style={{ animationDelay: "0.3s" }}
-          >
-            <div className="bg-csag-accent/20 w-16 h-16 mx-auto rounded-lg flex items-center justify-center mb-4">
-              <Heart className="h-8 w-8 text-csag-accent-light" />
-            </div>
-            <div className="text-4xl md:text-5xl font-bold mb-4 text-csag-accent-light">
-              50+
-            </div>
-            <p className="uppercase text-sm tracking-wider font-medium text-white">
-              Rural communities transformed
-            </p>
-          </div>
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          {/* Row 1 */}
+          <StatCard
+            icon={<Users className="h-8 w-8 text-csag-accent-light" />}
+            label="Students Impacted"
+            description="A vibrant community of learners, each benefiting from enhanced educational opportunities."
+            value="40,000"
+            delay="0s"
+          />
+          <StatCard
+            icon={<BookOpen className="h-8 w-8 text-csag-accent-light" />}
+            label="Books Distributed"
+            description="A treasure trove of knowledge that sparks imagination and fosters a lifelong love of reading."
+            value="142,800"
+            delay="0.05s"
+          />
+          <StatCard
+            icon={<School className="h-8 w-8 text-csag-accent-light" />}
+            label="Schools Reached"
+            description="A network of schools invigorated by our programs, creating supportive learning environments."
+            value="30"
+            delay="0.1s"
+          />
         </div>
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <StatCard
+            icon={<Monitor className="h-8 w-8 text-csag-accent-light" />}
+            label="Computer labs established for digital learning"
+            value="1"
+            delay="0.2s"
+          />
+          <StatCard
+            icon={<Droplet className="h-8 w-8 text-csag-accent-light" />}
+            label="Clean water sources provided"
+            value="2"
+            delay="0.25s"
+          />
+          <StatCard
+            icon={<Hammer className="h-8 w-8 text-csag-accent-light" />}
+            label="New schools constructed"
+            value="2"
+            delay="0.3s"
+          />
+        </div> */}
 
         <div className="text-center">
           <Link
@@ -94,3 +82,40 @@ export default function OurImpact() {
     </section>
   );
 }
+
+// Reusable stat card component
+const StatCard = ({
+  icon,
+  label,
+  value,
+  description,
+  delay,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  description?: string;
+  delay?: string;
+}) => {
+  return (
+    <div
+      className="bg-white/10 p-6 md:p-8 rounded-lg backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 animate-slide-up text-center"
+      style={{ animationDelay: delay }}
+    >
+      <div className="bg-csag-accent/20 w-14 h-14 md:w-16 md:h-16 mx-auto rounded-lg flex items-center justify-center mb-4">
+        {icon}
+      </div>
+      <div className="text-3xl md:text-4xl font-bold mb-2 md:mb-3 text-csag-accent-light">
+        {value}
+      </div>
+      <p className="text-xs md:text-sm font-medium text-white/95 mb-1">
+        {label}
+      </p>
+      {description && (
+        <p className="text-[11px] md:text-xs text-white/70 leading-relaxed">
+          {description}
+        </p>
+      )}
+    </div>
+  );
+};

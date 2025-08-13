@@ -23,7 +23,7 @@ export default function FounderSection() {
             <div className="lg:w-1/3">
               <div className="relative h-96 lg:h-full">
                 <Image
-                  src="/images/photoshoot/IMG_20230425_115805_MP.jpg"
+                  src="/images/emmanuel_adika_benedict.jpeg"
                   alt="CSAG Founder"
                   className="w-full h-full object-cover"
                   width={400}
@@ -35,7 +35,10 @@ export default function FounderSection() {
             <div className="lg:w-2/3 p-8 lg:p-12">
               <div className="mb-6">
                 <h3 className="text-3xl font-bold text-gray-900 mb-2">
-                  Dr. <span className="text-csag-accent">Kwame Mensah</span>
+                  Mr.{" "}
+                  <span className="text-csag-accent">
+                    Emmanuel Adika Benedict
+                  </span>
                 </h3>
                 <p className="text-xl text-csag-primary font-semibold">
                   Founder & Executive Director
@@ -44,33 +47,35 @@ export default function FounderSection() {
 
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Dr. Kwame Mensah founded Child Survival Aid Ghana in 2005 with
-                  a simple yet powerful vision: to ensure that every child in
-                  rural Ghana has access to quality education, regardless of
-                  their economic circumstances.
+                  Emmanuel Adika Benedict founded Child Survival Aid Ghana in
+                  2005 with a simple yet powerful vision: to ensure that every
+                  child in rural Ghana has access to quality education,
+                  regardless of their economic circumstances.
                 </p>
 
                 <p>
-                  Born and raised in a rural village in Ghana, Dr. Mensah
-                  experienced firsthand the challenges that children face when
-                  educational opportunities are limited. After completing his
-                  education and working in international development, he
-                  returned to Ghana with a mission to create lasting change.
+                  Born and raised in a rural village in Ghana, Emmanuel Adika
+                  Benedict experienced firsthand the challenges that children
+                  face when educational opportunities are limited. After
+                  completing his education and working in international
+                  development, he returned to Ghana with a mission to create
+                  lasting change.
                 </p>
 
                 <p>
                   "Education is the most powerful weapon which you can use to
-                  change the world," says Dr. Mensah. "When I see the smiles on
-                  children's faces as they receive their first books or enter a
-                  newly built classroom, I know we're making a real difference."
+                  change the world," says Emmanuel Adika Benedict. "When I see
+                  the smiles on children's faces as they receive their first
+                  books or enter a newly built classroom, I know we're making a
+                  real difference."
                 </p>
 
                 <p>
-                  Under Dr. Mensah's leadership, CSAG has grown from a small
-                  community initiative to an organization that has impacted
-                  hundreds of thousands of lives across Ghana. His dedication to
-                  educational equity and community development continues to
-                  inspire our work every day.
+                  Under Emmanuel Adika Benedict's leadership, CSAG has grown
+                  from a small community initiative to an organization that has
+                  impacted hundreds of thousands of lives across Ghana. His
+                  dedication to educational equity and community development
+                  continues to inspire our work every day.
                 </p>
               </div>
 

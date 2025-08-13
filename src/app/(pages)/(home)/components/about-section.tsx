@@ -12,9 +12,9 @@ export default function AboutSection() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-csag-primary to-csag-accent mx-auto mb-8 rounded-minimal"></div>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            Learn about our organization and how we're making a difference in
-            the lives of children across Ghana through innovative educational
-            programs.
+            Child Survival Aid Ghana (CSAG) expands quality learning for rural
+            girls and boys by providing books, trained educators, safe spaces
+            and community support.
           </p>
         </div>
 
@@ -24,17 +24,14 @@ export default function AboutSection() {
               Who We <span className="text-csag-accent">Are</span>
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-              Child Survival Aid Ghana (CSAG) is a non-profit organization
-              empowering underprivileged children in rural Ghana through access
-              to quality education. Founded in 2005, we have grown from a small
-              community initiative to an organization that has impacted hundreds
-              of thousands of lives.
+              Since 2019 we have worked alongside schools and families in rural
+              Ghana to remove the barriers that keep children out of classrooms.
+              We focus on literacy, foundational skills and confidence.
             </p>
             <p className="text-gray-600 mb-8 leading-relaxed text-lg">
-              Our team consists of dedicated educators, community organizers,
-              and volunteers who are passionate about creating equal
-              opportunities for all children, regardless of their background or
-              circumstances.
+              Our volunteer educators, local coordinators and partners deliver
+              practical resources, mentoring and teacher support so every child
+              can learn, stay in school and dream bigger.
             </p>
             <div className="flex flex-wrap gap-6 mt-10">
               <Link
@@ -45,10 +42,10 @@ export default function AboutSection() {
                 <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="/history"
+                href="/about#story"
                 className="inline-flex items-center text-csag-accent font-semibold hover:text-csag-accent-dark transition-colors group"
               >
-                Our history
+                Our story
                 <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

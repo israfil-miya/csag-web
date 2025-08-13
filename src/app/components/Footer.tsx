@@ -37,30 +37,35 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <Link
+                target="_blank"
                 href="https://www.facebook.com/csagchildghana"
                 className="text-gray-400 hover:text-blue-400 transition-colors duration-200 hover:scale-110 transform"
               >
                 <Facebook className="h-6 w-6" />
               </Link>
               <Link
+                target="_blank"
                 href="https://x.com/csagchild "
                 className="text-gray-400 hover:text-blue-500 transition-colors duration-200 hover:scale-110 transform"
               >
                 <Twitter className="h-6 w-6" />
               </Link>
               <Link
+                target="_blank"
                 href="https://www.instagram.com/csagchildghana"
                 className="text-gray-400 hover:text-purple-400 transition-colors duration-200 hover:scale-110 transform"
               >
                 <Instagram className="h-6 w-6" />
               </Link>
               <Link
+                target="_blank"
                 href="https://www.youtube.com/@childsurvivalaidghana"
                 className="text-gray-400 hover:text-red-500 transition-colors duration-200 hover:scale-110 transform"
               >
                 <Youtube className="h-6 w-6" />
               </Link>
               <Link
+                target="_blank"
                 href="https://www.linkedin.com/company/child-survival-aid-ghana?originalSubdomain=gh "
                 className="text-gray-400 hover:text-blue-400 transition-colors duration-200 hover:scale-110 transform"
               >

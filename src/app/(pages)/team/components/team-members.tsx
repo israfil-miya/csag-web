@@ -1,58 +1,10 @@
 "use client";
 
+import { ExternalLink, Quote } from "lucide-react";
 import Image from "next/image";
-
-// Temporary placeholder data. Replace image with real headshots under /public/images/team/...
-const TEAM_MEMBERS = [
-  {
-    id: "1",
-    name: "Aisha Rahman",
-    designation: "Program Director",
-    imageUrl: "/images/csag-logo-no-bg.png",
-    testimonial:
-      "Working with the community has been a deeply rewarding journey. Our programs focus on sustainable change, ensuring families thrive long after our direct involvement.",
-  },
-  {
-    id: "2",
-    name: "Rahul Sen",
-    designation: "Field Coordinator",
-    imageUrl: "/images/csag-logo-no-bg.png",
-    testimonial:
-      "Every field visit reminds me why we started—real people, real stories, and real impact. Collaboration is our superpower.",
-  },
-  {
-    id: "3",
-    name: "Mina Das",
-    designation: "Communications Lead",
-    imageUrl: "/images/csag-logo-no-bg.png",
-    testimonial:
-      "Telling authentic stories builds trust and amplifies the voices that matter most—the communities we serve.",
-  },
-  {
-    id: "4",
-    name: "Arif Khan",
-    designation: "Monitoring & Evaluation",
-    imageUrl: "/images/csag-logo-no-bg.png",
-    testimonial:
-      "Data helps us learn, adapt, and scale what works. Our goal is transparency and outcomes that stand up to scrutiny.",
-  },
-  {
-    id: "5",
-    name: "Sadia Noor",
-    designation: "Volunteer Manager",
-    imageUrl: "/images/csag-logo-no-bg.png",
-    testimonial:
-      "Volunteers are the heartbeat of our NGO. We invest in their growth so they can invest in the community.",
-  },
-  {
-    id: "6",
-    name: "Imran Hossain",
-    designation: "Finance & Ops",
-    imageUrl: "/images/csag-logo-no-bg.png",
-    testimonial:
-      "Responsible stewardship ensures every donation stretches further and creates measurable impact.",
-  },
-];
+import Link from "next/link";
+import React from "react";
+import { TEAM_MEMBERS } from "../content/team-content";
 
 export default function TeamMembers() {
   return (
@@ -66,48 +18,98 @@ export default function TeamMembers() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our <span className="text-csag-primary">Core Team</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-csag-primary to-csag-accent mx-auto rounded-minimal"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-csag-primary to-csag-accent mx-auto rounded-minimal" />
           <p className="mt-6 text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
             The passionate people driving our mission forward across Ghana.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 animate-slide-up">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 animate-slide-up">
           {TEAM_MEMBERS.map((m) => (
-            <article
-              key={m.id}
-              className="bg-white rounded-lg ring-1 ring-black/5 overflow-hidden hover:ring-2 hover:ring-csag-primary/20 transition-all duration-300"
-            >
-              <div className="p-8 flex flex-col items-center text-center">
-                <div className="relative mb-6">
-                  <span className="absolute -inset-1 rounded-minimal bg-gradient-to-tr from-csag-primary/10 to-csag-accent/10 blur-sm"></span>
-                  <div className="relative">
-                    <Image
-                      src={m.imageUrl}
-                      alt={`${m.name} headshot`}
-                      width={96}
-                      height={96}
-                      className="h-24 w-24 rounded-lg object-cover ring-2 ring-white"
-                    />
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {m.name}
-                </h3>
-                <p className="text-csag-primary font-medium mt-1">
-                  {m.designation}
-                </p>
-
-                <p className="mt-4 text-gray-600 leading-relaxed italic">
-                  “{m.testimonial}”
-                </p>
-              </div>
-            </article>
+            <TeamMemberCard key={m.id} member={m} />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+interface TeamMember {
+  id: string;
+  name: string;
+  designation: string;
+  socialMedia: string;
+  imageUrl: string;
+  testimonial: string;
+}
+
+function TeamMemberCard({ member }: { member: TeamMember }) {
+  const [expanded, setExpanded] = React.useState(false);
+  const maxChars = 260;
+  const isLong = member.testimonial.length > maxChars;
+  const displayText =
+    expanded || !isLong
+      ? member.testimonial
+      : member.testimonial.slice(0, maxChars).trimEnd() + "…";
+
+  return (
+    <article className="group relative flex flex-col h-full border border-gray-200 rounded-lg bg-white/70 backdrop-blur-sm p-6 hover:border-csag-primary/40 transition-colors">
+      {/* Header */}
+      <div className="flex items-start gap-4 mb-4">
+        <Link
+          href={member.socialMedia}
+          className="shrink-0 focus:outline-none focus:ring-2 focus:ring-csag-primary rounded-lg"
+          aria-label={`View ${member.name}'s profile`}
+          target="_blank"
+        >
+          <Image
+            src={member.imageUrl}
+            alt={`${member.name} headshot`}
+            width={80}
+            height={80}
+            className="h-20 w-20 rounded-lg object-cover border border-gray-200"
+          />
+        </Link>
+        <div className="flex-1">
+          <h3 className="text-lg font-semibold text-gray-900 leading-snug">
+            {member.name}
+          </h3>
+          <p className="text-csag-primary text-sm font-medium mt-1">
+            {member.designation}
+          </p>
+          <div className="mt-2">
+            <Link
+              href={member.socialMedia}
+              target="_blank"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-gray-500 hover:text-csag-primary transition-colors"
+            >
+              View Profile <ExternalLink className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
+        <Quote className="h-6 w-6 text-csag-accent/40 hidden sm:block" />
+      </div>
+
+      {/* Testimonial */}
+      <p className="text-gray-600 text-sm leading-relaxed italic flex-1">
+        "{displayText}"
+      </p>
+
+      {/* Actions */}
+      {isLong && (
+        <button
+          type="button"
+          onClick={() => setExpanded((e) => !e)}
+          className="mt-4 self-start text-xs font-semibold tracking-wide text-csag-primary hover:text-csag-accent transition-colors"
+          aria-expanded={expanded}
+        >
+          {expanded ? "Show less" : "Read more"}
+        </button>
+      )}
+
+      {/* Accent bar */}
+      <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-csag-primary/60 via-csag-accent/60 to-csag-primary/60 opacity-0 group-hover:opacity-100 transition-opacity" />
+    </article>
   );
 }

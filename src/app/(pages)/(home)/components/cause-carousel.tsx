@@ -204,7 +204,7 @@ export default function CauseCarousel() {
         {/* Call to Action Section */}
         <div className="text-center mt-16">
           <Link
-            href="/our-work"
+            href=""
             className="inline-flex items-center text-csag-primary font-semibold hover:text-csag-primary-dark transition-colors group"
           >
             Explore all active causes

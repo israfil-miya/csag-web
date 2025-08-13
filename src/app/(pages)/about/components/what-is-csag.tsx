@@ -2,10 +2,7 @@ import Image from "next/image";
 
 export default function WhatIsCSAG() {
   return (
-    <section
-      id="our-story"
-      className="py-24 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-white"
-    >
+    <section className="py-24 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -13,8 +10,9 @@ export default function WhatIsCSAG() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-csag-primary to-csag-accent mx-auto mb-8 rounded-minimal"></div>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            Child Survival Aid Ghana (CSAG) is a non-profit organization
-            dedicated to breaking the cycle of poverty through education.
+            Child Survival Aid Ghana (CSAG) is a non-profit NGO dedicated to
+            enhancing educational opportunities for underprivileged children in
+            rural Ghana.
           </p>
         </div>
 
@@ -24,23 +22,29 @@ export default function WhatIsCSAG() {
               Our <span className="text-csag-accent">Story</span>
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-              Founded in 2005, CSAG began as a small community initiative in
-              rural Ghana. What started as a simple mission to provide basic
-              educational resources to underprivileged children has grown into a
-              comprehensive organization that has impacted hundreds of thousands
-              of lives across the country.
+              Since 2019, <strong>Child Survival Aid Ghana (CSAG)</strong> has
+              been on a mission to bring hope and education to children in rural
+              Ghana. We believe every child, no matter their background,
+              deserves a chance to learn and grow. Through our work, we’ve seen
+              how quality education opens doors and helps children reach their
+              potential.
             </p>
+
             <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-              We believe that every child, regardless of their background or
-              circumstances, deserves access to quality education. Our work
-              focuses on rural communities where educational opportunities are
-              limited, and where the cycle of poverty is most entrenched.
+              Education is more than books and classrooms. It unlocks better
+              opportunities, stronger families, and personal freedom. It changes
+              communities and shapes futures beyond the individual. Knowing
+              this, we dedicate ourselves to helping children rise above
+              poverty’s challenges.
             </p>
+
             <p className="text-gray-600 mb-8 leading-relaxed text-lg">
-              Through innovative programs, community partnerships, and the
-              dedication of our team and volunteers, we're creating lasting
-              change in communities across Ghana. We're not just building
-              schools – we're building futures.
+              Every day, <strong>CSAG</strong> works to raise education
+              standards and literacy in Ghana's rural areas. Our goal is to
+              empower often-forgotten children with tools and confidence to
+              build better lives. With wide support, we transform lives and help
+              young dreamers climb toward a brighter tomorrow while contributing
+              to sustainable development.
             </p>
           </div>
           <div

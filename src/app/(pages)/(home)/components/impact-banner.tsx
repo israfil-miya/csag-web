@@ -25,7 +25,7 @@ export default function ImpactBanner() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-12">
           <div className="bg-white/10 p-8 rounded-lg backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 animate-slide-up">
             <div className="text-5xl md:text-6xl font-bold mb-4 text-csag-accent-light">
-              875,000+
+              150,000+
             </div>
             <p className="uppercase text-sm tracking-wider font-medium text-white">
               Children reached through our educational programs
@@ -37,7 +37,7 @@ export default function ImpactBanner() {
             style={{ animationDelay: "0.1s" }}
           >
             <div className="text-5xl md:text-6xl font-bold mb-4 text-csag-accent-light">
-              600+
+              40+
             </div>
             <p className="uppercase text-sm tracking-wider font-medium text-white">
               Schools supported through construction
@@ -49,7 +49,7 @@ export default function ImpactBanner() {
             style={{ animationDelay: "0.2s" }}
           >
             <div className="text-5xl md:text-6xl font-bold mb-4 text-csag-accent-light">
-              156,700+
+              50,700+
             </div>
             <p className="uppercase text-sm tracking-wider font-medium text-white">
               Adults empowered through skills training
@@ -59,7 +59,7 @@ export default function ImpactBanner() {
 
         <div className="text-center">
           <Link
-            href="/impact"
+            href=""
             className="inline-flex items-center bg-csag-accent-light text-white font-semibold px-8 py-3 rounded-minimal hover:bg-csag-accent transition-all duration-300 hover:translate-y-[-2px] group"
           >
             View our impact report

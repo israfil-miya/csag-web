@@ -24,19 +24,39 @@ export default function ContactSection() {
 
             <div className="space-y-8">
               <div className="flex items-start">
-                <div className="bg-csag-primary/10 p-3 rounded-lg mr-4">
+                <div className="bg-csag-primary/10 p-3 rounded-lg mr-4 shrink-0">
                   <MapPin className="h-6 w-6 text-csag-primary" />
                 </div>
-                <div>
+                <div className="w-full">
                   <h4 className="font-semibold text-gray-900 mb-2">
                     Our Address
                   </h4>
-                  <p className="text-gray-600 leading-relaxed">
-                    123 Education Street
-                    <br />
-                    Accra, Ghana
-                    <br />
-                    West Africa
+                  <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                    Child Survival Aid Ghana, 123 Education Street, Accra, Ghana
+                  </p>
+                  <div
+                    className="relative w-full overflow-hidden rounded-minimal border border-gray-200 bg-gray-100"
+                    style={{ aspectRatio: "4 / 3" }}
+                  >
+                    <iframe
+                      title="Map showing the location of Child Survival Aid Ghana"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.5636077865497!2d-0.14485172414709938!3d5.631244732886693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf856759d013d7%3A0x6c60a00554b0741d!2sChild%20Survival%20Aid%20Ghana!5e0!3m2!1sen!2sbd!4v1755031649880!5m2!1sen!2sbd"
+                      className="absolute inset-0 w-full h-full"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                      allowFullScreen
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
+                  <p className="mt-2 text-xs text-gray-500">
+                    <a
+                      href="https://maps.google.com/?q=Child+Survival+Aid+Ghana"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-csag-primary"
+                    >
+                      Open in Google Maps
+                    </a>
                   </p>
                 </div>
               </div>
