@@ -35,12 +35,12 @@ export default function WhatIsCSAG() {
               opportunities, stronger families, and personal freedom. It changes
               communities and shapes futures beyond the individual. Knowing
               this, we dedicate ourselves to helping children rise above
-              poverty’s challenges.
+              poverty&apos;s challenges.
             </p>
 
             <p className="text-gray-600 mb-8 leading-relaxed text-lg">
               Every day, <strong>CSAG</strong> works to raise education
-              standards and literacy in Ghana's rural areas. Our goal is to
+              standards and literacy in Ghana&apos;s rural areas. Our goal is to
               empower often-forgotten children with tools and confidence to
               build better lives. With wide support, we transform lives and help
               young dreamers climb toward a brighter tomorrow while contributing

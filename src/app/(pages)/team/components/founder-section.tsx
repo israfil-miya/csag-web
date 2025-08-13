@@ -63,18 +63,18 @@ export default function FounderSection() {
                 </p>
 
                 <p>
-                  "Education is the most powerful weapon which you can use to
-                  change the world," says Emmanuel Adika Benedict. "When I see
-                  the smiles on children's faces as they receive their first
-                  books or enter a newly built classroom, I know we're making a
-                  real difference."
+                  &ldquo;Education is the most powerful weapon which you can use
+                  to change the world,&rdquo; says Emmanuel Adika Benedict.
+                  &ldquo;When I see the smiles on children&apos;s faces as they
+                  receive their first books or enter a newly built classroom, I
+                  know we&apos;re making a real difference.&rdquo;
                 </p>
 
                 <p>
-                  Under Emmanuel Adika Benedict's leadership, CSAG has grown
-                  from a small community initiative to an organization that has
-                  impacted hundreds of thousands of lives across Ghana. His
-                  dedication to educational equity and community development
+                  Under Emmanuel Adika Benedict&apos;s leadership, CSAG has
+                  grown from a small community initiative to an organization
+                  that has impacted hundreds of thousands of lives across Ghana.
+                  His dedication to educational equity and community development
                   continues to inspire our work every day.
                 </p>
               </div>

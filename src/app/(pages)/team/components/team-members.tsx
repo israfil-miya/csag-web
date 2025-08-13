@@ -93,7 +93,7 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
 
       {/* Testimonial */}
       <p className="text-gray-600 text-sm leading-relaxed italic flex-1">
-        "{displayText}"
+        &ldquo;{displayText}&rdquo;
       </p>
 
       {/* Actions */}

@@ -10,8 +10,8 @@ export default function ContactSection() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-csag-primary to-csag-accent mx-auto mb-8 rounded-minimal"></div>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            Have questions about our work? Want to get involved? We'd love to
-            hear from you.
+            Have questions about our work? Want to get involved? We&apos;d love
+            to hear from you.
           </p>
         </div>
 

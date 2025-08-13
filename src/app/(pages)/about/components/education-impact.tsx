@@ -27,7 +27,7 @@ export default function EducationImpact() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Education's Impact on{" "}
+            Education&apos;s Impact on{" "}
             <span className="text-csag-primary">Ghana</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-csag-primary to-csag-accent mx-auto mb-8 rounded-minimal" />

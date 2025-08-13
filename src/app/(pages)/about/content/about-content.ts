@@ -14,7 +14,7 @@ import {
 export interface IconEntry {
   title: string;
   text: string;
-  icon?: React.ComponentType<any>;
+  icon?: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>;
 }
 
 export const mission =

@@ -17,7 +17,7 @@ export default function ImpactBanner() {
           </h2>
           <div className="w-24 h-1 bg-csag-accent-light mx-auto mb-8 rounded-minimal"></div>
           <p className="max-w-3xl mx-auto text-lg leading-relaxed opacity-95">
-            Through your support, we've been able to make a significant
+            Through your support, we&apos;ve been able to make a significant
             difference in the lives of children and communities across Ghana.
           </p>
         </div>

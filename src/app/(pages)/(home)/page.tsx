@@ -1,7 +1,7 @@
 "use client";
 
 import "flowbite";
-import React, { useEffect } from "react";
+import React from "react";
 import AboutSection from "./components/about-section";
 import CauseCarousel from "./components/cause-carousel";
 import HeroSection from "./components/hero-section";

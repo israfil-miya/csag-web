@@ -12,7 +12,7 @@ export default function SponsorSection() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-csag-primary to-csag-accent mx-auto mb-8 rounded-minimal"></div>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            We're grateful to our partners and sponsors who make our work
+            We&apos;re grateful to our partners and sponsors who make our work
             possible through their generous support and commitment.
           </p>
         </div>
@@ -22,7 +22,7 @@ export default function SponsorSection() {
           <div className="lg:flex items-center">
             <div className="lg:w-1/4 mb-8 lg:mb-0 flex justify-center">
               {/* <div className="bg-gray-50 p-8 rounded-lg"> */}
-              <img
+              <Image
                 className="h-36 w-auto mx-auto hover:scale-105 transition-transform duration-300"
                 width={240}
                 height={140}
