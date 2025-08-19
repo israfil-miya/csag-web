@@ -7,7 +7,7 @@ import CauseCarousel from "./components/cause-carousel";
 import HeroSection from "./components/hero-section";
 import ImpactBanner from "./components/impact-banner";
 import MissionSection from "./components/mission-section";
-import OurWorkSection from "./components/our-work-section";
+import OurProjectSection from "./components/our-projects-section";
 import PartnerBanner from "./components/partner-banner";
 import SponsorSection from "./components/sponsor-section";
 
@@ -39,7 +39,7 @@ function Home() {
 
       {/* Our Work */}
       <div id="work" aria-labelledby="work-heading">
-        <OurWorkSection />
+        <OurProjectSection />
       </div>
 
       {/* Sponsors */}

@@ -112,7 +112,7 @@ function Nav() {
               </div>
             )}
           </div>
-          {NavLink("/volunteer", "Our Work", pathname, true)}
+          {NavLink("/our-projects", "Our Projects", pathname)}
           {NavLink("/volunteer", "Get Involved", pathname, true)}
           {NavLink("/blogs", "News & Blogs", pathname)}
         </nav>

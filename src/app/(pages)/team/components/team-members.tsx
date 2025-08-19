@@ -20,7 +20,9 @@ export default function TeamMembers() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-csag-primary to-csag-accent mx-auto rounded-minimal" />
           <p className="mt-6 text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            The passionate people driving our mission forward across Ghana.
+            Volunteers, donors, and partners are vital in transforming lives,
+            and hearing directly from those who have experienced this impact
+            firsthand can be incredibly powerful and inspiring.
           </p>
         </div>
 
