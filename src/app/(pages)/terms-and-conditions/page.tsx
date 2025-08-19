@@ -31,7 +31,7 @@ export default function TermsAndConditionsPage() {
           </p>
           <p>
             These terms and conditions outline the rules and regulations for the
-            use of Child Survival Aid Ghana's Website, located at
+            use of Child Survival Aid Ghana&apos;s Website, located at
             https://csaghana.org/.
           </p>
           <p>
@@ -43,16 +43,18 @@ export default function TermsAndConditionsPage() {
           <p>
             The following terminology applies to these Terms and Conditions,
             Privacy Statement and Disclaimer Notice and all Agreements:
-            "Client", "You" and "Your" refers to you, the person log on this
-            website and compliant to the Company’s terms and conditions. "The
-            Company", "Ourselves", "We", "Our" and "Us", refers to our Company.
-            "Party", "Parties", or "Us", refers to both the Client and
-            ourselves. All terms refer to the offer, acceptance and
+            &quot;Client&quot;, &quot;You&quot; and &quot;Your&quot; refers to
+            you, the person log on this website and compliant to the
+            Company&apos;s terms and conditions. &quot;The Company&quot;,
+            &quot;Ourselves&quot;, &quot;We&quot;, &quot;Our&quot; and
+            &quot;Us&quot;, refers to our Company. &quot;Party&quot;,
+            &quot;Parties&quot;, or &quot;Us&quot;, refers to both the Client
+            and ourselves. All terms refer to the offer, acceptance and
             consideration of payment necessary to undertake the process of our
             assistance to the Client in the most appropriate manner for the
-            express purpose of meeting the Client’s needs in respect of
-            provision of the Company’s stated services, in accordance with and
-            subject to, prevailing law of Netherlands. Any use of the above
+            express purpose of meeting the Client&apos;s needs in respect of
+            provision of the Company&apos;s stated services, in accordance with
+            and subject to, prevailing law of Netherlands. Any use of the above
             terminology or other words in the singular, plural, capitalization
             and/or he/she or they, are taken as interchangeable and therefore as
             referring to same.
@@ -61,10 +63,10 @@ export default function TermsAndConditionsPage() {
           <p>
             We employ the use of cookies. By accessing Child Survival Aid Ghana,
             you agreed to use cookies in agreement with the Child Survival Aid
-            Ghana's Privacy Policy. Most interactive websites use cookies to let
-            us retrieve the user’s details for each visit. Cookies are used by
-            our website to enable the functionality of certain areas to make it
-            easier for people visiting our website. Some of our
+            Ghana&apos;s Privacy Policy. Most interactive websites use cookies
+            to let us retrieve the user&apos;s details for each visit. Cookies
+            are used by our website to enable the functionality of certain areas
+            to make it easier for people visiting our website. Some of our
             affiliate/advertising partners may also use cookies.
           </p>
           <h3 className="text-lg font-semibold mt-10 mb-3">License</h3>
@@ -212,8 +214,8 @@ export default function TermsAndConditionsPage() {
             </li>
           </ul>
           <p className="mt-6">
-            No use of Child Survival Aid Ghana's logo or other artwork will be
-            allowed for linking absent a trademark license agreement.
+            No use of Child Survival Aid Ghana&apos;s logo or other artwork will
+            be allowed for linking absent a trademark license agreement.
           </p>
           <h3 className="text-lg font-semibold mt-10 mb-3">iFrames</h3>
           <p>
