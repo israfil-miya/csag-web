@@ -1,8 +1,13 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { projects } from "../../our-projects/content/projects";
 
 export default function OurWorkSection() {
+  const latest = [...projects]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 3);
+
   return (
     <div className="py-24 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
@@ -16,104 +21,50 @@ export default function OurWorkSection() {
             communities across Ghana.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Card 1 */}
-          <div className="bg-white rounded-lg overflow-hidden border border-gray-100 hover:border-csag-primary/20 transition-all duration-300 hover:translate-y-[-2px] animate-slide-up">
-            <div className="relative h-64 overflow-hidden">
-              <Image
-                src="/images/photoshoot/IMG_20220926_104901_MP.jpg"
-                alt="Children in a classroom"
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                width={400}
-                height={224}
-              />
-            </div>
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Child Education
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Last year, your support helped over 3,000 children in rural
-                Ghana access quality education, learning materials, and
-                mentorship.
-              </p>
-              <Link
-                href="/child-education"
-                className="inline-flex items-center text-csag-primary font-semibold hover:text-csag-primary-dark transition-colors group"
-              >
-                Sponsor a child today
-                <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div
-            className="bg-white rounded-lg overflow-hidden border border-gray-100 hover:border-csag-primary/20 transition-all duration-300 hover:translate-y-[-2px] animate-slide-up"
-            style={{ animationDelay: "0.1s" }}
-          >
-            <div className="relative h-64 overflow-hidden">
-              <Image
-                src="/images/photoshoot/computer-lab.JPG"
-                alt="Computer lab in a school"
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                width={400}
-                height={224}
-              />
-            </div>
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Digital Learning Access
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                In 2024, we equipped 5 rural schools with computer labs, opening
-                the door to digital education for 1,200 students.
-              </p>
-              <Link
-                href="/digital-learning"
-                className="inline-flex items-center text-csag-primary font-semibold hover:text-csag-primary-dark transition-colors group"
-              >
-                Learn more
-                <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div
-            className="bg-white rounded-lg overflow-hidden border border-gray-100 hover:border-csag-primary/20 transition-all duration-300 hover:translate-y-[-2px] animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <div className="relative h-64 overflow-hidden">
-              <Image
-                src="/images/photoshoot/teachers-teaching-in-class.jpg"
-                alt="Teachers in a classroom"
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                width={400}
-                height={224}
-              />
-            </div>
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Empowering Educators
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                We trained 150 rural teachers in modern, inclusive teaching
-                practices, impacting thousands of young learners.
-              </p>
-              <Link
-                href="/empowering-educators"
-                className="inline-flex items-center text-csag-primary font-semibold hover:text-csag-primary-dark transition-colors group"
-              >
-                Learn more
-                <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
+          {latest.map((p, i) => (
+            <article
+              key={p.slug}
+              className="bg-white rounded-lg overflow-hidden border border-gray-100 hover:border-csag-primary/20 transition-all duration-300 hover:translate-y-[-2px] animate-slide-up flex flex-col"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              <div className="relative h-64 overflow-hidden">
+                <Image
+                  src={p.image}
+                  alt={p.title}
+                  fill
+                  sizes="(max-width:768px) 100vw, 400px"
+                  className="object-cover hover:scale-110 transition-transform duration-500"
+                />
+                <span className="absolute top-3 left-3 px-2.5 py-1 text-[11px] font-semibold tracking-wide rounded-minimal bg-white/85 backdrop-blur-sm text-csag-primary">
+                  {p.status}
+                </span>
+              </div>
+              <div className="p-8 flex flex-col flex-1">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-snug">
+                  <Link
+                    href={`/our-projects/${p.slug}`}
+                    className="hover:underline underline-offset-4 decoration-2 decoration-csag-primary"
+                  >
+                    {p.title}
+                  </Link>
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed line-clamp-4">
+                  {p.excerpt}
+                </p>
+                <div className="mt-auto">
+                  <Link
+                    href={`/our-projects/${p.slug}`}
+                    className="inline-flex items-center text-csag-primary font-semibold hover:text-csag-primary-dark transition-colors group"
+                  >
+                    Read more
+                    <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
-
-        {/* View All Link */}
         <div className="text-center mt-16">
           <Link
             href="/our-projects"

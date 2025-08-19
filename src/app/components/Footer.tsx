@@ -97,18 +97,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/our-work"
+                  href="/our-projects"
                   className="text-gray-300 hover:text-csag-primary transition-colors duration-200 hover:translate-x-1 transform inline-block"
                 >
-                  Our Work
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/get-involved"
-                  className="text-gray-300 hover:text-csag-primary transition-colors duration-200 hover:translate-x-1 transform inline-block"
-                >
-                  Get Involved
+                  Our Projects
                 </Link>
               </li>
               <li>
@@ -121,7 +113,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/about#contact"
                   className="text-gray-300 hover:text-csag-primary transition-colors duration-200 hover:translate-x-1 transform inline-block"
                 >
                   Contact
@@ -147,7 +139,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start">
                 <Phone className="h-5 w-5 mr-3 text-csag-primary mt-1" />
-                <span className="text-gray-300">+233 123 456 789</span>
+                <span className="text-gray-300">+233 26 770 2211</span>
               </li>
             </ul>
           </div>
@@ -176,10 +168,25 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="py-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+        <div className="py-8 border-t border-gray-700 text-center text-gray-400 text-sm space-y-3">
           <p>
             © 2012-{new Date().getFullYear()} Child Survival Aid Ghana. All
             rights reserved.
+          </p>
+          <p className="space-x-4">
+            <Link
+              href="/donor-privacy-policy"
+              className="hover:text-csag-primary transition-colors"
+            >
+              Donor Privacy Policy
+            </Link>
+            <span className="text-gray-600">|</span>
+            <Link
+              href="/terms-and-conditions"
+              className="hover:text-csag-primary transition-colors"
+            >
+              Terms & Conditions
+            </Link>
           </p>
         </div>
       </div>

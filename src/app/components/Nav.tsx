@@ -6,7 +6,7 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "../lib/utils";
 
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 
 function NavLink(
   href: string,
@@ -71,7 +71,10 @@ function Nav() {
 
   return (
     <div className="flex items-center align-middle justify-between text-foreground p-4 px-6 bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
-      <div className="flex items-center space-x-4">
+      <div
+        onClick={() => redirect("/")}
+        className="flex cursor-pointer items-center space-x-4"
+      >
         <Image
           src="/images/csag-logo-no-bg.png"
           alt="Logo"

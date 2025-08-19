@@ -94,18 +94,10 @@ export default function ContactSection() {
                   <h4 className="font-semibold text-gray-900 mb-2">Call Us</h4>
                   <p className="text-gray-600">
                     <a
-                      href="tel:+233123456789"
+                      href="tel:+233267702211"
                       className="hover:text-csag-primary transition-colors"
                     >
-                      +233 123 456 789
-                    </a>
-                  </p>
-                  <p className="text-gray-600">
-                    <a
-                      href="tel:+233987654321"
-                      className="hover:text-csag-primary transition-colors"
-                    >
-                      +233 987 654 321
+                      +233 26 770 2211
                     </a>
                   </p>
                 </div>
