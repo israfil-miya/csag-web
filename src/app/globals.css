@@ -33,6 +33,16 @@
   .flat-shadow {
     box-shadow: none;
   }
+
+  /* Horizontal marquee animation */
+  @keyframes csag-scroll-x {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 html,

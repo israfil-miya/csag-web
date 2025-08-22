@@ -32,7 +32,8 @@ export default function ContactSection() {
                     Our Address
                   </h4>
                   <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                    Child Survival Aid Ghana, 123 Education Street, Accra, Ghana
+                    Child Survival Aid Ghana, P.O. Box TN 1661, Teshie-Nungua
+                    Estate, Accra, Ghana
                   </p>
                   <div
                     className="relative w-full overflow-hidden rounded-minimal border border-gray-200 bg-gray-100"

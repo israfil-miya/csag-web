@@ -49,6 +49,8 @@ function Nav() {
   const pathname = usePathname();
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const aboutRef = useRef<HTMLDivElement | null>(null);
+  const [isInvolvedDropdownOpen, setIsInvolvedDropdownOpen] = useState(false);
+  const involvedRef = useRef<HTMLDivElement | null>(null);
 
   // Close the About dropdown when clicking outside or pressing Escape
   useEffect(() => {
@@ -68,6 +70,28 @@ function Nav() {
       document.removeEventListener("keydown", handleKey);
     };
   }, [isAboutDropdownOpen]);
+
+  // Close the Get Involved dropdown when clicking outside or pressing Escape
+  useEffect(() => {
+    if (!isInvolvedDropdownOpen) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        involvedRef.current &&
+        !involvedRef.current.contains(e.target as Node)
+      ) {
+        setIsInvolvedDropdownOpen(false);
+      }
+    };
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsInvolvedDropdownOpen(false);
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKey);
+    };
+  }, [isInvolvedDropdownOpen]);
 
   return (
     <div className="flex items-center align-middle justify-between text-foreground p-4 px-6 bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
@@ -116,7 +140,36 @@ function Nav() {
             )}
           </div>
           {NavLink("/our-projects", "Our Projects", pathname)}
-          {NavLink("/volunteer", "Get Involved", pathname, true)}
+          <div className="relative" ref={involvedRef}>
+            {NavLink("/get-involved", "Get Involved", pathname, true, () =>
+              setIsInvolvedDropdownOpen((o) => !o)
+            )}
+            {isInvolvedDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-minimal border border-gray-100 py-2 z-50">
+                <Link
+                  href="/partnership"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-csag-primary/10 hover:text-csag-primary transition-colors"
+                  onClick={() => setIsInvolvedDropdownOpen(false)}
+                >
+                  Become a Partner
+                </Link>
+                <Link
+                  href="/donate"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-csag-primary/10 hover:text-csag-primary transition-colors"
+                  onClick={() => setIsInvolvedDropdownOpen(false)}
+                >
+                  Donate
+                </Link>
+                <Link
+                  href="/team"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-csag-primary/10 hover:text-csag-primary transition-colors"
+                  onClick={() => setIsInvolvedDropdownOpen(false)}
+                >
+                  Volunteer & Join Us
+                </Link>
+              </div>
+            )}
+          </div>
           {NavLink("/blogs", "News & Blogs", pathname)}
         </nav>
         <div className="flex items-center space-x-4">

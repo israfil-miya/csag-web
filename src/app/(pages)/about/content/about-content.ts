@@ -103,22 +103,26 @@ export const reasons = [
 
 // Central partner data for easier maintenance / future CMS hookup
 export const featuredPartner = {
-  name: "Government of Ireland",
-  highlight: "Ireland",
-  logo: "/images/partners/govt_of_ireland.jpg",
+  name: "Government of Australia",
+  highlight: "Australia",
+  logo: "/images/partners/australian_aid-no-bg.png",
   description:
-    "Support that advances equitable education and child wellbeing across rural Ghana.",
-  link: "/partners/govt-of-ireland",
+    "The Government of Australia, through the Australian High Commission's Direct Aid Program (DAP), funded key improvements at Kasunya D/A and R/C Basic Schools. Their support enabled the kindergarten refurbishment, the creation of a modern computer lab, and a renovated library, improving learning spaces and digital access. We sincerely thank DAP for strengthening educational opportunities and the future prospects of children in Shai-Osudoku.",
+  link: "",
 };
 
 export const supporters: { name: string; logo: string }[] = [
   { name: "Anike Foundation", logo: "/images/partners/anike_foundation.jpg" },
-  { name: "Australian Aid", logo: "/images/partners/australian_aid.jpg" },
   { name: "Books For Africa", logo: "/images/partners/books_for_africa.jpg" },
+  {
+    name: "Government of Ireland",
+    logo: "/images/partners/Government-of-Ireland-Logo.png",
+  },
+
+  { name: "Good Deeds Day", logo: "/images/partners/good_deeds_day.jpg" },
+  { name: "Water Charity", logo: "/images/partners/water_charity.jpg" },
   {
     name: "Education Saves Lives",
     logo: "/images/partners/education_saves_lives.jpg",
   },
-  { name: "Good Deeds Day", logo: "/images/partners/good_deeds_day.jpg" },
-  { name: "Water Charity", logo: "/images/partners/water_charity.jpg" },
-].sort((a, b) => a.name.localeCompare(b.name));
+];

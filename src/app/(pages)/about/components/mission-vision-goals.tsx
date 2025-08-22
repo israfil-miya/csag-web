@@ -1,4 +1,4 @@
-import { Lightbulb, Target } from "lucide-react";
+import { Flag, Lightbulb, Target } from "lucide-react";
 import { goals, mission, vision } from "../content/about-content";
 
 export default function MissionVisionGoals() {
@@ -38,9 +38,12 @@ export default function MissionVisionGoals() {
             className="lg:col-span-2 animate-slide-up"
             style={{ animationDelay: "0.05s" }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              Our Goals
-            </h3>
+            <div className="flex items-center gap-3 mb-6">
+              <Flag className="h-8 w-8 text-csag-accent" />
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+                Our Goals
+              </h3>
+            </div>
             <div className="grid sm:grid-cols-2 gap-6">
               {goals.map((g, i) => {
                 const Icon = g.icon;

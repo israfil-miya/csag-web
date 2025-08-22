@@ -170,7 +170,7 @@ export default function Footer() {
 
         <div className="py-8 border-t border-gray-700 text-center text-gray-400 text-sm space-y-3">
           <p>
-            © 2012-{new Date().getFullYear()} Child Survival Aid Ghana. All
+            © 2015-{new Date().getFullYear()} Child Survival Aid Ghana. All
             rights reserved.
           </p>
           <p className="space-x-4">

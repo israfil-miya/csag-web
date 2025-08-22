@@ -43,13 +43,13 @@ export default function SponsorSection() {
             <p className="text-gray-600 leading-relaxed mb-6 text-lg">
               {featuredPartner.description}
             </p>
-            <Link
+            {/* <Link
               href={featuredPartner.link}
               className="inline-flex items-center text-csag-primary font-semibold hover:text-csag-primary-dark transition-colors group"
             >
               Learn more about this partnership
               <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </Link> */}
           </div>
         </div>
 

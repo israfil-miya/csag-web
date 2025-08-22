@@ -10,7 +10,13 @@ export const metadata = {
 };
 
 export default function OurProjectPage() {
-  const sorted = [...projects].sort((a, b) => b.date.localeCompare(a.date));
+  // Ongoing projects first, then the rest by newest date
+  const sorted = [...projects].sort((a, b) => {
+    const pa = a.status === "Ongoing" ? 0 : 1;
+    const pb = b.status === "Ongoing" ? 0 : 1;
+    if (pa !== pb) return pa - pb;
+    return b.date.localeCompare(a.date);
+  });
   return (
     <section className="py-24 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">

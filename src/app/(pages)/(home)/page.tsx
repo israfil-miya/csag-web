@@ -7,6 +7,7 @@ import CauseCarousel from "./components/cause-carousel";
 import HeroSection from "./components/hero-section";
 import ImpactBanner from "./components/impact-banner";
 import MissionSection from "./components/mission-section";
+import OurImpact from "./components/our-impact";
 import OurProjectSection from "./components/our-projects-section";
 import PartnerBanner from "./components/partner-banner";
 import SponsorSection from "./components/sponsor-section";
@@ -28,13 +29,18 @@ function Home() {
       </div>
 
       {/* Causes Carousel */}
-      <div id="cause" aria-labelledby="cause-heading">
+      {/* <div id="cause" aria-labelledby="cause-heading">
         <CauseCarousel />
-      </div>
+      </div> */}
+
+      {/* Impact Metrics */}
+      {/* <div id="impact" aria-labelledby="impact-heading">
+          <ImpactBanner />
+        </div> */}
 
       {/* Impact Metrics */}
       <div id="impact" aria-labelledby="impact-heading">
-        <ImpactBanner />
+        <OurImpact />
       </div>
 
       {/* Our Work */}

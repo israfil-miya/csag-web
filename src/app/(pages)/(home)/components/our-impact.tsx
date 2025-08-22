@@ -51,7 +51,7 @@ export default function OurImpact() {
 
         <div className="text-center">
           <Link
-            href="/our-projects"
+            href="/our-projects" // this is temporary, since we don't have a dedicated impact page yet
             className="inline-flex items-center bg-csag-accent-light text-white font-semibold px-8 py-3 rounded-minimal hover:bg-csag-accent transition-all duration-300 hover:translate-y-[-2px] group"
           >
             View our detailed impact report
