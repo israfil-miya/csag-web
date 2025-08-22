@@ -4,8 +4,6 @@ import {
   Briefcase,
   Gift,
   Handshake,
-  Heart,
-  Layers,
   Megaphone,
   Package,
   Share,
@@ -34,11 +32,11 @@ export default function PartnershipPage() {
             </h1>
             <div className="w-24 h-1 bg-gradient-to-r from-csag-primary to-csag-accent mb-8 rounded-minimal" />
             <p className="text-gray-700 text-lg leading-relaxed">
-              The bonds we've established with organizations and individuals
-              hold immense significance to us. These partners share our vision
-              and values, uniting with us to enhance the educational prospects
-              of young Ghanaians, ultimately contributing to a more skilled
-              workforce and a fortified nation.
+              The bonds we&apos;ve established with organizations and
+              individuals hold immense significance to us. These partners share
+              our vision and values, uniting with us to enhance the educational
+              prospects of young Ghanaians, ultimately contributing to a more
+              skilled workforce and a fortified nation.
             </p>
             <p className="text-gray-700 text-lg leading-relaxed mt-4">
               Child Survival Aid Ghana actively seeks partnerships with
@@ -46,7 +44,7 @@ export default function PartnershipPage() {
               universities, colleges, and individuals. Our mission revolves
               around empowering underprivileged boys and girls in rural Ghana,
               aiming to combat poverty and illiteracy through education.
-              Together, we're driving positive change in Ghana.
+              Together, we&apos;re driving positive change in Ghana.
             </p>
             <div className="mt-8 flex gap-4">
               <Link

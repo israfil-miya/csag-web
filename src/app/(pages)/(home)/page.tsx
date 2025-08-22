@@ -3,9 +3,9 @@
 import "flowbite";
 import React from "react";
 import AboutSection from "./components/about-section";
-import CauseCarousel from "./components/cause-carousel";
+// import CauseCarousel from "./components/cause-carousel";
 import HeroSection from "./components/hero-section";
-import ImpactBanner from "./components/impact-banner";
+// import ImpactBanner from "./components/impact-banner";
 import MissionSection from "./components/mission-section";
 import OurImpact from "./components/our-impact";
 import OurProjectSection from "./components/our-projects-section";

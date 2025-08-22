@@ -7,11 +7,9 @@ import {
   Clock,
   Coins,
   Gift,
-  HandCoins,
   HandHeart,
   Handshake,
   Hash,
-  Heart,
   Landmark,
   Megaphone,
   Package,
@@ -119,10 +117,11 @@ export default function DonatePage() {
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
                   Child Survival Aid Ghana stands as a beacon of hope for
-                  vulnerable children. As an African proverb reminds us, "It
-                  takes a village to raise a child." Embracing this principle,
-                  we extend an invitation to you, our compassionate partners, to
-                  join us in empowering these young lives.
+                  vulnerable children. As an African proverb reminds us,
+                  &quot;It takes a village to raise a child.&quot; Embracing
+                  this principle, we extend an invitation to you, our
+                  compassionate partners, to join us in empowering these young
+                  lives.
                 </p>
                 <p>
                   Embark on a transformative journey with our vibrant CSAG,
