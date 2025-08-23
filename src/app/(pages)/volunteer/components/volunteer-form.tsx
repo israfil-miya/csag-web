@@ -33,7 +33,8 @@ export default function VolunteerForm({
       setStatus("success");
       setMessage("Thanks for registering! We'll get back to you soon.");
       form.reset();
-    } catch (err) {
+    } catch (e: unknown) {
+      console.error(e);
       setStatus("error");
       setMessage("Something went wrong. Please try again.");
     }
