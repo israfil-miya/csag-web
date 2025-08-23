@@ -161,7 +161,7 @@ function Nav() {
                   Donate
                 </Link>
                 <Link
-                  href="/team"
+                  href="/volunteer"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-csag-primary/10 hover:text-csag-primary transition-colors"
                   onClick={() => setIsInvolvedDropdownOpen(false)}
                 >
@@ -170,7 +170,7 @@ function Nav() {
               </div>
             )}
           </div>
-          {NavLink("/blogs", "News & Blogs", pathname)}
+          {NavLink("/blog", "Blog & News", pathname)}
         </nav>
         <div className="flex items-center space-x-4">
           <Link
