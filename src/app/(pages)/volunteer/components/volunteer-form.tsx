@@ -29,14 +29,28 @@ export default function VolunteerForm({
 
     try {
       const res = await fetch("/api/volunteer", { method: "POST", body: fd });
-      if (!res.ok) throw new Error("Failed");
+      if (!res.ok) {
+        let errMsg = "Submission failed. Please try again.";
+        try {
+          const data = await res.json();
+          if (data?.error) errMsg = String(data.error);
+        } catch {
+          if (res.status === 429)
+            errMsg = "Too many requests. Please try again later.";
+        }
+        throw new Error(errMsg);
+      }
       setStatus("success");
       setMessage("Thanks for registering! We'll get back to you soon.");
       form.reset();
     } catch (e: unknown) {
+      const msg =
+        e instanceof Error
+          ? e.message
+          : "Something went wrong. Please try again.";
       console.error(e);
       setStatus("error");
-      setMessage("Something went wrong. Please try again.");
+      setMessage(msg);
     }
   }
 
@@ -51,6 +65,7 @@ export default function VolunteerForm({
               ? "border-red-200 bg-red-50 text-red-700"
               : "border-gray-200 bg-white"
           }`}
+          aria-live="polite"
         >
           {message}
         </div>
@@ -64,7 +79,7 @@ export default function VolunteerForm({
       >
         {/* Name */}
         <div>
-          <label className="block text-sm text-gray-800">
+          <label className="csag-label text-gray-800">
             Name <span className="text-red-600">(Required)</span>
           </label>
           <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -73,7 +88,7 @@ export default function VolunteerForm({
                 name="firstName"
                 placeholder="First"
                 required
-                className="w-full border border-gray-300 rounded-minimal px-3 py-2 focus:outline-none focus:ring-1 focus:ring-csag-primary"
+                className="csag-input"
               />
             </div>
             <div>
@@ -81,7 +96,7 @@ export default function VolunteerForm({
                 name="lastName"
                 placeholder="Last"
                 required
-                className="w-full border border-gray-300 rounded-minimal px-3 py-2 focus:outline-none focus:ring-1 focus:ring-csag-primary"
+                className="csag-input"
               />
             </div>
           </div>
@@ -90,66 +105,47 @@ export default function VolunteerForm({
         {/* Contact */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="csag-label">
               Email <span className="text-red-600">(Required)</span>
             </label>
-            <input
-              type="email"
-              name="email"
-              required
-              className="mt-1 w-full border border-gray-300 rounded-minimal px-3 py-2 focus:outline-none focus:ring-1 focus:ring-csag-primary"
-            />
+            <input type="email" name="email" required className="csag-input" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="csag-label">
               Phone <span className="text-red-600">(Required)</span>
             </label>
-            <input
-              type="tel"
-              name="phone"
-              required
-              className="mt-1 w-full border border-gray-300 rounded-minimal px-3 py-2 focus:outline-none focus:ring-1 focus:ring-csag-primary"
-            />
+            <input type="tel" name="phone" required className="csag-input" />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Emergency Contact Info
-          </label>
-          <input
-            name="emergencyContact"
-            className="mt-1 w-full border border-gray-300 rounded-minimal px-3 py-2 focus:outline-none focus:ring-1 focus:ring-csag-primary"
-          />
+          <label className="csag-label">Emergency Contact Info</label>
+          <input name="emergencyContact" className="csag-input" />
         </div>
 
         {/* Availability */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Availability (Days/Times)
-            </label>
+            <label className="csag-label">Availability (Days/Times)</label>
             <input
               name="availability"
-              placeholder="e.g., Weekdays 9am–2pm"
-              className="mt-1 w-full border border-gray-300 rounded-minimal px-3 py-2 focus:outline-none focus:ring-1 focus:ring-csag-primary"
+              placeholder="e.g., weekdays 9am-2pm"
+              className="csag-input"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Preferred Time Commitment
-            </label>
+            <label className="csag-label">Preferred Time Commitment</label>
             <input
               name="commitment"
               placeholder="weekly, monthly, one-time events"
-              className="mt-1 w-full border border-gray-300 rounded-minimal px-3 py-2 focus:outline-none focus:ring-1 focus:ring-csag-primary"
+              className="csag-input"
             />
           </div>
         </div>
 
         {/* Prior Experience */}
         <fieldset>
-          <legend className="block text-sm font-medium text-gray-700 mb-2">
+          <legend className="csag-label mb-2">
             Have you volunteered before?
           </legend>
           <div className="flex items-center gap-6">
@@ -157,7 +153,7 @@ export default function VolunteerForm({
               <input
                 type="radio"
                 name="priorExperience"
-                value="yes"
+                value="Yes"
                 className="accent-csag-primary"
                 required
               />
@@ -167,7 +163,7 @@ export default function VolunteerForm({
               <input
                 type="radio"
                 name="priorExperience"
-                value="no"
+                value="No"
                 className="accent-csag-primary"
               />
               No
@@ -177,7 +173,7 @@ export default function VolunteerForm({
 
         {/* Interests */}
         <fieldset>
-          <legend className="block text-sm font-medium text-gray-700 mb-2">
+          <legend className="csag-label mb-2">
             What volunteering opportunities are you interested in?
           </legend>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-800">
@@ -197,21 +193,15 @@ export default function VolunteerForm({
 
         {/* About */}
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="csag-label">
             Tell us about your strengths and skills (to help us match you)
           </label>
-          <textarea
-            name="about"
-            rows={6}
-            className="mt-1 w-full border border-gray-300 rounded-minimal px-3 py-2 focus:outline-none focus:ring-1 focus:ring-csag-primary"
-          />
+          <textarea name="about" rows={6} className="csag-textarea" />
         </div>
 
         {/* Resume */}
         <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Resume & Cover Letter
-          </label>
+          <label className="csag-label">Resume & Cover Letter</label>
           <div className="mt-1 flex items-center gap-3">
             <input
               id="resume"
@@ -226,7 +216,7 @@ export default function VolunteerForm({
             />
             <label
               htmlFor="resume"
-              className="inline-flex cursor-pointer items-center bg-csag-accent hover:bg-csag-accent-light text-white font-semibold px-4 py-2 rounded-minimal"
+              className="csag-button-accent cursor-pointer"
             >
               Browse…
             </label>
@@ -241,7 +231,7 @@ export default function VolunteerForm({
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="w-full md:w-auto min-w-[200px] inline-flex items-center justify-center bg-csag-primary hover:bg-csag-primary/90 text-white font-semibold px-6 py-3 rounded-minimal disabled:opacity-60"
+            className="w-full md:w-auto min-w-[200px] csag-button-primary"
           >
             {status === "submitting" ? "Submitting..." : "Submit"}
           </button>

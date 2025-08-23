@@ -1,3 +1,4 @@
+"use client";
 import {
   Facebook,
   Instagram,
@@ -10,8 +11,35 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Footer() {
+  const [nlEmail, setNlEmail] = useState("");
+  const [nlStatus, setNlStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+  const [nlMsg, setNlMsg] = useState("");
+
+  async function submitNewsletter(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setNlStatus("submitting");
+    setNlMsg("");
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: nlEmail }),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setNlStatus("success");
+      setNlMsg("Subscribed! We'll keep you posted.");
+      setNlEmail("");
+    } catch (err) {
+      console.error(err);
+      setNlStatus("error");
+      setNlMsg("Subscription failed. Please try again.");
+    }
+  }
   return (
     <footer className="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -152,17 +180,34 @@ export default function Footer() {
               Subscribe to our newsletter to receive updates on our work and
               impact.
             </p>
-            <form className="space-y-3">
+            {nlMsg && (
+              <div
+                className={`mb-3 rounded-minimal border px-3 py-2 text-xs ${
+                  nlStatus === "success"
+                    ? "border-green-200 bg-green-50 text-green-800"
+                    : nlStatus === "error"
+                    ? "border-red-200 bg-red-50 text-red-700"
+                    : "border-gray-700 bg-gray-800 text-gray-300"
+                }`}
+              >
+                {nlMsg}
+              </div>
+            )}
+            <form className="space-y-3" onSubmit={submitNewsletter}>
               <input
                 type="email"
                 placeholder="Your email address"
-                className="w-full px-4 py-3 rounded-minimal bg-gray-700 border border-gray-600 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-csag-primary focus:border-transparent transition-all duration-200"
+                value={nlEmail}
+                onChange={(e) => setNlEmail(e.target.value)}
+                required
+                className="csag-input-dark"
               />
               <button
                 type="submit"
-                className="w-full bg-csag-accent hover:bg-csag-accent-light text-white font-semibold py-3 px-6 rounded-minimal transition-all duration-200 hover:translate-y-[-1px]"
+                disabled={nlStatus === "submitting"}
+                className="w-full csag-button-accent"
               >
-                Subscribe
+                {nlStatus === "submitting" ? "Subscribing..." : "Subscribe"}
               </button>
             </form>
           </div>

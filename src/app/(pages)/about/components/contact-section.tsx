@@ -1,6 +1,37 @@
+"use client";
 import { Clock, Mail, MapPin, Phone, Send } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactSection() {
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+  const [msg, setMsg] = useState<string>("");
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("submitting");
+    setMsg("");
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const payload = Object.fromEntries(fd.entries());
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setStatus("success");
+      setMsg("Thanks for reaching out! We'll get back to you shortly.");
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+      setMsg("Something went wrong. Please try again.");
+    }
+  }
   return (
     <section className="py-24 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
@@ -130,68 +161,66 @@ export default function ContactSection() {
               Send us a <span className="text-csag-accent">Message</span>
             </h3>
 
-            <form className="space-y-6">
+            {msg && (
+              <div
+                className={`mb-6 rounded-minimal border px-4 py-3 text-sm ${
+                  status === "success"
+                    ? "border-green-200 bg-green-50 text-green-800"
+                    : status === "error"
+                    ? "border-red-200 bg-red-50 text-red-700"
+                    : "border-gray-200 bg-white"
+                }`}
+              >
+                {msg}
+              </div>
+            )}
+
+            <form className="space-y-6" onSubmit={onSubmit} noValidate>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label
-                    htmlFor="firstName"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
+                  <label htmlFor="firstName" className="csag-label">
                     First Name
                   </label>
                   <input
                     type="text"
                     id="firstName"
                     name="firstName"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-csag-primary focus:border-transparent transition-all duration-200"
+                    className="csag-input"
                     placeholder="Your first name"
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="lastName"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
+                  <label htmlFor="lastName" className="csag-label">
                     Last Name
                   </label>
                   <input
                     type="text"
                     id="lastName"
                     name="lastName"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-csag-primary focus:border-transparent transition-all duration-200"
+                    className="csag-input"
                     placeholder="Your last name"
                   />
                 </div>
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label htmlFor="email" className="csag-label">
                   Email Address
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-csag-primary focus:border-transparent transition-all duration-200"
+                  className="csag-input"
                   placeholder="your.email@example.com"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label htmlFor="subject" className="csag-label">
                   Subject
                 </label>
-                <select
-                  id="subject"
-                  name="subject"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-csag-primary focus:border-transparent transition-all duration-200"
-                >
+                <select id="subject" name="subject" className="csag-select">
                   <option value="">Select a subject</option>
                   <option value="general">General Inquiry</option>
                   <option value="donation">Donation Question</option>
@@ -202,26 +231,24 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label htmlFor="message" className="csag-label">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-csag-primary focus:border-transparent transition-all duration-200"
+                  className="csag-textarea"
                   placeholder="Tell us how we can help you..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-csag-accent hover:bg-csag-accent-light text-white font-semibold py-4 px-8 rounded-minimal transition-all duration-300 hover:translate-y-[-2px] flex items-center justify-center group"
+                disabled={status === "submitting"}
+                className="w-full csag-button-accent flex items-center justify-center group"
               >
-                Send Message
+                {status === "submitting" ? "Sending..." : "Send Message"}
                 <Send className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
             </form>
