@@ -14,9 +14,60 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Child Survival Aid Ghana",
+  metadataBase: new URL("https://csaghana.org"),
+  title: {
+    default: "Child Survival Aid Ghana (CSAG)",
+    template: "%s | CSAG",
+  },
   description:
-    "A Ghana based non-profit organization focused on child survival.",
+    "Child Survival Aid Ghana (CSAG) is a non-profit NGO improving access to quality education and resources for children in rural Ghana.",
+  keywords: [
+    "CSAG",
+    "Child Survival Aid Ghana",
+    "Ghana NGO",
+    "education in Ghana",
+    "rural education",
+    "non-profit",
+    "charity",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "Child Survival Aid Ghana (CSAG)",
+    title: "Child Survival Aid Ghana (CSAG)",
+    description:
+      "CSAG expands learning opportunities for children in rural Ghana through books, trained educators, safe spaces and community support.",
+    images: [
+      {
+        url: "/images/csag-logo-no-bg.png",
+        width: 800,
+        height: 800,
+        alt: "CSAG Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Child Survival Aid Ghana (CSAG)",
+    description:
+      "CSAG expands learning opportunities for children in rural Ghana through books, trained educators, safe spaces and community support.",
+    images: ["/images/csag-logo-no-bg.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

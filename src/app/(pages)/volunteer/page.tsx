@@ -14,9 +14,24 @@ import { TEAM_MEMBERS } from "../team/content/team-content";
 import VolunteerForm from "./components/volunteer-form";
 
 export const metadata = {
-  title: "Volunteer | CSAG",
+  title: "Volunteer — Child Survival Aid Ghana",
   description:
-    "Volunteer with Child Survival Aid Ghana to support education, health, and community development.",
+    "Volunteer with CSAG to support education, health, and community development in rural Ghana.",
+  alternates: { canonical: "/volunteer" },
+  openGraph: {
+    title: "Volunteer with CSAG",
+    description:
+      "Share your skills to improve education and wellbeing in rural Ghana.",
+    url: "/volunteer",
+    images: [{ url: "/images/csag-logo-no-bg.png", width: 1200, height: 800 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Volunteer with CSAG",
+    description:
+      "Share your skills to improve education and wellbeing in rural Ghana.",
+    images: ["/images/csag-logo-no-bg.png"],
+  },
 };
 
 const PROGRAMS: { title: string; body: string }[] = [

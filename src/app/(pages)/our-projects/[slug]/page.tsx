@@ -19,6 +19,22 @@ export async function generateMetadata({
   return {
     title: `${project.title} | CSAG`,
     description: project.excerpt,
+    alternates: { canonical: `/our-projects/${slug}` },
+    openGraph: {
+      type: "article",
+      title: project.title,
+      description: project.excerpt,
+      url: `/our-projects/${slug}`,
+      images: project.image
+        ? [{ url: project.image, width: 1200, height: 630 }]
+        : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.excerpt,
+      images: project.image ? [project.image] : undefined,
+    },
   };
 }
 

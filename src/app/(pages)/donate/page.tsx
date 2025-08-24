@@ -22,9 +22,31 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Donate | CSAG",
+  title: "Donate — Support Education in Rural Ghana",
   description:
-    "Every gift helps educate a child in rural Ghana. Donate once or monthly via our GlobalGiving page or see bank transfer details.",
+    "Every gift helps educate a child in rural Ghana. Donate once or monthly via GlobalGiving or use our bank transfer details.",
+  alternates: { canonical: "/donate" },
+  openGraph: {
+    title: "Donate to CSAG",
+    description:
+      "Your donation empowers learners with books, safe spaces, and trained educators.",
+    url: "/donate",
+    images: [
+      {
+        url: "/images/csag-logo-no-bg.png",
+        width: 1200,
+        height: 630,
+        alt: "Support education through CSAG",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Donate to CSAG",
+    description:
+      "Your donation empowers learners with books, safe spaces, and trained educators.",
+    images: ["/images/csag-logo-no-bg.png"],
+  },
 };
 
 const GLOBAL_GIVING_URL =
@@ -321,8 +343,8 @@ export default function DonatePage() {
               </div>
             </div>
             <div className="absolute inset-0 opacity-10 pointer-events-none">
-              <div className="absolute -left-10 -top-10 w-40 h-40 bg-white rounded-full" />
-              <div className="absolute right-0 bottom-0 w-56 h-56 bg-white/70 rounded-full translate-x-16 translate-y-16" />
+              <div className="hidden sm:block absolute -left-10 -top-10 w-40 h-40 bg-white rounded-full" />
+              <div className="hidden sm:block absolute right-0 bottom-0 w-56 h-56 bg-white/70 rounded-full translate-x-16 translate-y-16" />
             </div>
           </div>
         </section>

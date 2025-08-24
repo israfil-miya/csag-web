@@ -1,6 +1,17 @@
 export const metadata = {
   title: "Donor Privacy Policy | CSAG",
   description: "Child Survival Aid Ghana donor privacy protection statement.",
+  alternates: { canonical: "/donor-privacy-policy" },
+  openGraph: {
+    title: "Donor Privacy Policy — CSAG",
+    description: "Child Survival Aid Ghana donor privacy protection statement.",
+    url: "/donor-privacy-policy",
+  },
+  twitter: {
+    card: "summary",
+    title: "Donor Privacy Policy — CSAG",
+    description: "Child Survival Aid Ghana donor privacy protection statement.",
+  },
 };
 
 export default function DonorPrivacyPolicyPage() {

@@ -25,6 +25,26 @@ export async function generateMetadata({
     title: `${post.data.title} | Blog & News | CSAG`,
     description:
       post.data.excerpt || `Read ${post.data.title} by ${post.data.author}`,
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      type: "article",
+      title: post.data.title,
+      description:
+        post.data.excerpt || `Read ${post.data.title} by ${post.data.author}`,
+      url: `/blog/${slug}`,
+      authors: post.data.author ? [post.data.author] : undefined,
+      publishedTime: post.data.date,
+      images: post.data.thumbnail
+        ? [{ url: post.data.thumbnail, width: 1200, height: 630 }]
+        : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.data.title,
+      description:
+        post.data.excerpt || `Read ${post.data.title} by ${post.data.author}`,
+      images: post.data.thumbnail ? [post.data.thumbnail] : undefined,
+    },
   };
 }
 

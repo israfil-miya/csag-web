@@ -232,6 +232,13 @@ export default function Footer() {
             >
               Terms & Conditions
             </Link>
+            <span className="text-gray-600">|</span>
+            <Link
+              href="/sitemap.xml"
+              className="hover:text-csag-primary transition-colors"
+            >
+              Sitemap
+            </Link>
           </p>
         </div>
       </div>

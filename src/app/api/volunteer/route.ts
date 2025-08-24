@@ -8,9 +8,9 @@ export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
-    // Rate limit by IP: 5/hour
+    // Rate limit by IP: 2/hour
     const ip = getClientIp(req);
-    const rl = rateLimit(`volunteer:${ip}`, 5, 60 * 60 * 1000);
+    const rl = rateLimit(`volunteer:${ip}`, 2, 60 * 60 * 1000);
     if (!rl.ok) {
       return NextResponse.json(
         { ok: false, error: "Too many requests. Please try again later." },

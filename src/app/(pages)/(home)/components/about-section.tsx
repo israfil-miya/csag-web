@@ -54,8 +54,8 @@ export default function AboutSection() {
             className="order-1 lg:order-2 animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <div className="relative">
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-csag-primary/20 rounded-lg opacity-60"></div>
+            <div className="relative overflow-hidden">
+              <div className="hidden sm:block absolute -top-6 -left-6 w-32 h-32 bg-csag-primary/20 rounded-lg opacity-60"></div>
               <Image
                 src="/images/photoshoot/everyone-hands-up.jpg"
                 alt="CSAG team members working with children"
@@ -63,7 +63,7 @@ export default function AboutSection() {
                 width={600}
                 height={400}
               />
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-csag-accent/30 rounded-lg opacity-60"></div>
+              <div className="hidden sm:block absolute -bottom-6 -right-6 w-24 h-24 bg-csag-accent/30 rounded-lg opacity-60"></div>
             </div>
           </div>
         </div>

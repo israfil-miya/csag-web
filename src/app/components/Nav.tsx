@@ -1,12 +1,13 @@
 "use client";
 
-import { ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { cn } from "../lib/utils";
 
-import { redirect, usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 function NavLink(
   href: string,
@@ -47,10 +48,48 @@ function NavLink(
 
 function Nav() {
   const pathname = usePathname();
+  const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+  const currentPath = mounted ? pathname || "" : "";
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const [isInvolvedDropdownOpen, setIsInvolvedDropdownOpen] = useState(false);
   const involvedRef = useRef<HTMLDivElement | null>(null);
+  // mobile state
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
+  const [isMobileInvolvedOpen, setIsMobileInvolvedOpen] = useState(false);
+
+  // ensure client-only elements (portals) render after first mount
+  useEffect(() => setMounted(true), []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileOpen(false);
+    setIsMobileAboutOpen(false);
+    setIsMobileInvolvedOpen(false);
+  }, [pathname]);
+
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    if (!isMobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMobileOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [isMobileOpen]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileOpen) {
+      const original = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = original;
+      };
+    }
+  }, [isMobileOpen]);
 
   // Close the About dropdown when clicking outside or pressing Escape
   useEffect(() => {
@@ -93,10 +132,13 @@ function Nav() {
     };
   }, [isInvolvedDropdownOpen]);
 
+  // Avoid SSR/client mismatches by rendering only after mount
+  if (!mounted) return null;
+
   return (
     <div className="flex items-center align-middle justify-between text-foreground p-4 px-6 bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
       <div
-        onClick={() => redirect("/")}
+        onClick={() => router.push("/")}
         className="flex cursor-pointer items-center space-x-4"
       >
         <Image
@@ -115,9 +157,9 @@ function Nav() {
       </div>
       <div className="items-center text-lg gap-x-16 font-semibold xl:flex hidden">
         <nav className="space-x-8 flex flex-row items-center">
-          {NavLink("/", "Home", pathname)}
+          {NavLink("/", "Home", currentPath)}
           <div className="relative" ref={aboutRef}>
-            {NavLink("/about", "About Us", pathname, true, () =>
+            {NavLink("/about", "About Us", currentPath, true, () =>
               setIsAboutDropdownOpen((o) => !o)
             )}
             {isAboutDropdownOpen && (
@@ -139,7 +181,7 @@ function Nav() {
               </div>
             )}
           </div>
-          {NavLink("/our-projects", "Our Projects", pathname)}
+          {NavLink("/our-projects", "Our Projects", currentPath)}
           <div className="relative" ref={involvedRef}>
             {NavLink("/get-involved", "Get Involved", pathname, true, () =>
               setIsInvolvedDropdownOpen((o) => !o)
@@ -170,7 +212,7 @@ function Nav() {
               </div>
             )}
           </div>
-          {NavLink("/blog", "Blog & News", pathname)}
+          {NavLink("/blog", "Blog & News", currentPath)}
         </nav>
         <div className="flex items-center space-x-4">
           <Link
@@ -184,12 +226,179 @@ function Nav() {
       <div className="xl:hidden flex items-center justify-between">
         <button
           type="button"
-          className="inline-flex hover:cursor-pointer items-center text-sm p-2 text-gray-500 rounded-minimal hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-csag-primary transition-all duration-200"
-          aria-controls="navbar-default"
-          aria-expanded="false"
+          className="inline-flex hover:cursor-pointer items-center text-sm p-2 text-gray-600 rounded-minimal hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-csag-primary transition-all duration-200"
+          aria-controls="mobile-nav"
+          aria-expanded={isMobileOpen}
+          onClick={() => setIsMobileOpen((o) => !o)}
         >
-          <Menu size={32} />
+          {isMobileOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
+      </div>
+
+      {/* mobile overlay (portal to body so it shades the page, not the navbar) */}
+      {mounted &&
+        createPortal(
+          <div
+            className={cn(
+              "xl:hidden fixed inset-0 bg-black/30 z-40 transition-opacity duration-200",
+              isMobileOpen ? "opacity-100" : "pointer-events-none opacity-0"
+            )}
+            onClick={() => setIsMobileOpen(false)}
+          />,
+          document.body
+        )}
+
+      {/* mobile panel */}
+      <div
+        id="mobile-nav"
+        className={cn(
+          "xl:hidden absolute top-full left-0 right-0 z-50 origin-top bg-white border-b border-gray-100 shadow-sm",
+          "transition-all duration-200",
+          isMobileOpen
+            ? "opacity-100 scale-y-100"
+            : "opacity-0 scale-y-95 pointer-events-none"
+        )}
+      >
+        <nav className="p-2">
+          <div className="space-y-1">
+            <Link
+              href="/"
+              className={cn(
+                "block rounded-minimal px-4 py-3 text-base font-medium",
+                currentPath === "/"
+                  ? "bg-gray-50 text-csag-primary"
+                  : "hover:bg-gray-50"
+              )}
+              onClick={() => setIsMobileOpen(false)}
+            >
+              Home
+            </Link>
+
+            {/* About (expandable) */}
+            <button
+              className={cn(
+                "w-full flex items-center justify-between rounded-minimal px-4 py-3 text-base font-medium",
+                currentPath.startsWith("/about")
+                  ? "bg-gray-50 text-csag-primary"
+                  : "hover:bg-gray-50"
+              )}
+              onClick={() => setIsMobileAboutOpen((o) => !o)}
+              aria-expanded={isMobileAboutOpen}
+            >
+              <span>About Us</span>
+              <ChevronDown
+                size={18}
+                className={cn(
+                  "transition-transform",
+                  isMobileAboutOpen && "rotate-180"
+                )}
+              />
+            </button>
+            {isMobileAboutOpen && (
+              <div className="px-2 pb-2">
+                <Link
+                  href="/about"
+                  className="block rounded-minimal px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  Who We Are
+                </Link>
+                <Link
+                  href="/team"
+                  className="block rounded-minimal px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  Leadership & Team
+                </Link>
+              </div>
+            )}
+
+            <Link
+              href="/our-projects"
+              className={cn(
+                "block rounded-minimal px-4 py-3 text-base font-medium",
+                currentPath.startsWith("/our-projects")
+                  ? "bg-gray-50 text-csag-primary"
+                  : "hover:bg-gray-50"
+              )}
+              onClick={() => setIsMobileOpen(false)}
+            >
+              Our Projects
+            </Link>
+
+            {/* Get Involved (expandable) */}
+            <button
+              className={cn(
+                "w-full flex items-center justify-between rounded-minimal px-4 py-3 text-base font-medium",
+                currentPath.startsWith("/get-involved") ||
+                  ["/donate", "/volunteer", "/partnership"].includes(
+                    currentPath
+                  )
+                  ? "bg-gray-50 text-csag-primary"
+                  : "hover:bg-gray-50"
+              )}
+              onClick={() => setIsMobileInvolvedOpen((o) => !o)}
+              aria-expanded={isMobileInvolvedOpen}
+            >
+              <span>Get Involved</span>
+              <ChevronDown
+                size={18}
+                className={cn(
+                  "transition-transform",
+                  isMobileInvolvedOpen && "rotate-180"
+                )}
+              />
+            </button>
+            {isMobileInvolvedOpen && (
+              <div className="px-2 pb-2">
+                <Link
+                  href="/partnership"
+                  className="block rounded-minimal px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  Become a Partner
+                </Link>
+                <Link
+                  href="/donate"
+                  className="block rounded-minimal px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  Donate
+                </Link>
+                <Link
+                  href="/volunteer"
+                  className="block rounded-minimal px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  Volunteer & Join Us
+                </Link>
+              </div>
+            )}
+
+            <Link
+              href="/blog"
+              className={cn(
+                "block rounded-minimal px-4 py-3 text-base font-medium",
+                currentPath.startsWith("/blog")
+                  ? "bg-gray-50 text-csag-primary"
+                  : "hover:bg-gray-50"
+              )}
+              onClick={() => setIsMobileOpen(false)}
+            >
+              Blog & News
+            </Link>
+
+            <div className="pt-2 pb-3 px-2">
+              <Link
+                href="/donate"
+                className="block text-center bg-csag-accent hover:bg-csag-accent-light text-white px-6 py-3 uppercase font-sans tracking-wide rounded-minimal font-bold transition-all duration-200 hover:translate-y-[-1px]"
+                onClick={() => setIsMobileOpen(false)}
+              >
+                DONATE
+              </Link>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
   );

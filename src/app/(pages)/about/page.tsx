@@ -1,5 +1,3 @@
-"use client";
-
 import AboutHero from "./components/about-hero";
 import ApproachSection from "./components/approach-section";
 import ContactSection from "./components/contact-section";
@@ -8,6 +6,13 @@ import MissionVisionGoals from "./components/mission-vision-goals";
 import OurImpact from "./components/our-impact";
 import OurPartners from "./components/our-partners";
 import WhatIsCSAG from "./components/what-is-csag";
+
+export const metadata = {
+  title: "About Us — Child Survival Aid Ghana",
+  description:
+    "Learn about CSAG’s mission, vision, approach and impact improving education for children in rural Ghana.",
+  alternates: { canonical: "/about" },
+};
 
 export default function AboutPage() {
   return (

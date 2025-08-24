@@ -105,8 +105,8 @@ export default function OurPartners() {
               </Link>
             </div>
             <div className="absolute inset-0 opacity-10 pointer-events-none">
-              <div className="absolute -left-10 -top-10 w-40 h-40 bg-white rounded-full" />
-              <div className="absolute right-0 bottom-0 w-56 h-56 bg-white/70 rounded-full translate-x-16 translate-y-16" />
+              <div className="hidden sm:block absolute -left-10 -top-10 w-40 h-40 bg-white rounded-full" />
+              <div className="hidden sm:block absolute right-0 bottom-0 w-56 h-56 bg-white/70 rounded-full translate-x-16 translate-y-16" />
             </div>
           </div>
         </div>

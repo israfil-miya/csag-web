@@ -4,9 +4,24 @@ import Tags from "./components/tags";
 import { getAllPosts } from "./lib/posts";
 
 export const metadata = {
-  title: "Blog & News | CSAG",
+  title: "Blog & News — Child Survival Aid Ghana",
   description:
-    "Stories, updates, and impact from Child Survival Aid Ghana projects and communities.",
+    "Stories, updates, and impact from CSAG’s projects and communities across Ghana.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog & News — CSAG",
+    description:
+      "Stories, updates, and impact from CSAG’s projects and communities across Ghana.",
+    url: "/blog",
+    images: [{ url: "/images/csag-logo-no-bg.png", width: 1200, height: 800 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog & News — CSAG",
+    description:
+      "Stories, updates, and impact from CSAG’s projects and communities across Ghana.",
+    images: ["/images/csag-logo-no-bg.png"],
+  },
 };
 
 export default async function BlogIndexPage({

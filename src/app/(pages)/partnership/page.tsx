@@ -1,4 +1,4 @@
-import LogoCarousel from "@/app/components/logo-carousel";
+import LogoCarousel from "@/app/components/LogoCarousel";
 import {
   Award,
   Briefcase,
@@ -15,9 +15,24 @@ import Link from "next/link";
 import { supporters } from "../about/content/about-content";
 
 export const metadata = {
-  title: "Become a Partner | CSAG",
+  title: "Become a Partner — Child Survival Aid Ghana",
   description:
-    "Partner with Child Survival Aid Ghana to expand quality education for rural children.",
+    "Collaborate with CSAG to expand quality education for children in rural Ghana.",
+  alternates: { canonical: "/partnership" },
+  openGraph: {
+    title: "Become a Partner — CSAG",
+    description:
+      "Join CSAG and help scale impact across rural communities in Ghana.",
+    url: "/partnership",
+    images: [{ url: "/images/csag-logo-no-bg.png", width: 800, height: 800 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Become a Partner — CSAG",
+    description:
+      "Join CSAG and help scale impact across rural communities in Ghana.",
+    images: ["/images/csag-logo-no-bg.png"],
+  },
 };
 
 export default function PartnershipPage() {

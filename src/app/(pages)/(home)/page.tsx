@@ -1,6 +1,3 @@
-"use client";
-
-import "flowbite";
 import React from "react";
 import AboutSection from "./components/about-section";
 // import CauseCarousel from "./components/cause-carousel";
@@ -11,6 +8,34 @@ import OurImpact from "./components/our-impact";
 import OurProjectSection from "./components/our-projects-section";
 import PartnerBanner from "./components/partner-banner";
 import SponsorSection from "./components/sponsor-section";
+
+export const metadata = {
+  title: "Child Survival Aid Ghana (CSAG) — Education for Rural Communities",
+  description:
+    "CSAG is a Ghanaian non-profit improving access to quality education in rural communities through books, safe learning spaces, and community-driven programs.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Child Survival Aid Ghana (CSAG)",
+    description:
+      "Expanding learning opportunities for children in rural Ghana through resources, trained educators, and supportive environments.",
+    url: "/",
+    images: [
+      {
+        url: "/images/photoshoot/everyone-hands-up.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Children learning with CSAG support",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Child Survival Aid Ghana (CSAG)",
+    description:
+      "Expanding learning opportunities for children in rural Ghana through resources, trained educators, and supportive environments.",
+    images: ["/images/photoshoot/everyone-hands-up.jpg"],
+  },
+};
 
 function Home() {
   return (

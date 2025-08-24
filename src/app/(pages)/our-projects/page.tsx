@@ -4,9 +4,24 @@ import Link from "next/link";
 import { projects } from "./content/projects";
 
 export const metadata = {
-  title: "Our Projects | CSAG",
+  title: "Our Projects — Child Survival Aid Ghana",
   description:
-    "Browse completed and ongoing initiatives advancing learning outcomes in rural Ghana.",
+    "Browse completed and ongoing CSAG initiatives advancing learning outcomes in rural Ghana.",
+  alternates: { canonical: "/our-projects" },
+  openGraph: {
+    title: "Our Projects — CSAG",
+    description:
+      "Browse completed and ongoing CSAG initiatives advancing learning outcomes in rural Ghana.",
+    url: "/our-projects",
+    images: [{ url: "/images/csag-logo-no-bg.png", width: 1200, height: 800 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Projects — CSAG",
+    description:
+      "Browse completed and ongoing CSAG initiatives advancing learning outcomes in rural Ghana.",
+    images: ["/images/csag-logo-no-bg.png"],
+  },
 };
 
 export default function OurProjectPage() {
