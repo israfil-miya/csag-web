@@ -158,7 +158,7 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 text-csag-primary mt-1" />
                 <span className="text-gray-300 leading-relaxed">
-                  123 Education Street, Accra, Ghana
+                  P.O. Box TN 1661, Teshie-Nungua Estate, Accra, Ghana
                 </span>
               </li>
               <li className="flex items-start">
