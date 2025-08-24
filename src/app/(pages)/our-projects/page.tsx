@@ -1,7 +1,7 @@
+import { projects } from "@/app/(pages)/our-projects/content/projects";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from "./content/projects";
 
 export const metadata = {
   title: "Our Projects — Child Survival Aid Ghana",

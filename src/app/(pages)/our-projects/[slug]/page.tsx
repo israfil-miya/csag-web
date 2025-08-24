@@ -1,8 +1,11 @@
+import {
+  getProjectBySlug,
+  projects,
+} from "@/app/(pages)/our-projects/content/projects";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProjectBySlug, projects } from "../content/projects";
 
 export function generateStaticParams() {
   return projects.map((w) => ({ slug: w.slug }));

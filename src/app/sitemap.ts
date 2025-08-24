@@ -1,6 +1,6 @@
+import { projects } from "@/app/(pages)/our-projects/content/projects";
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "./(pages)/blog/lib/posts";
-import { projects } from "./(pages)/our-projects/content/projects";
 
 const BASE_URL = "https://csaghana.org";
 
