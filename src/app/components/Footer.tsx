@@ -53,6 +53,8 @@ export default function Footer() {
                 width={50}
                 height={50}
                 className="mr-3"
+                sizes="50px"
+                quality={70}
               />
               <p
                 className="text-xl font-bold text-csag-accent-light tracking-wide"

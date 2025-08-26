@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 @config "../../tailwind.config.ts";
-@plugin "flowbite/plugin";
-@source "../../node_modules/flowbite";
+/* Removed Flowbite plugin and source to reduce CSS bloat and render-blocking */
 
 @custom-variant dark (&:where(.dark, .dark *));
 

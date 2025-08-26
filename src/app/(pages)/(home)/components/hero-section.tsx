@@ -12,6 +12,8 @@ export default function HeroSection() {
         width={1920}
         height={800}
         priority
+        sizes="100vw"
+        quality={70}
       />
 
       {/* Gradient Overlay */}

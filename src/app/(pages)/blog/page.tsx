@@ -189,6 +189,7 @@ export default async function BlogIndexPage({
                     sizes="(max-width: 1024px) 100vw, 66vw"
                     className="object-cover"
                     priority
+                    quality={70}
                   />
                 )}
               </div>
@@ -247,6 +248,7 @@ export default async function BlogIndexPage({
                         fill
                         sizes="112px"
                         className="object-cover"
+                        quality={70}
                       />
                     )}
                   </div>

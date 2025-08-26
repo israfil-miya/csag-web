@@ -151,6 +151,8 @@ function Nav() {
           width={80}
           height={80}
           className="hover:scale-105 transition-transform duration-200"
+          sizes="80px"
+          quality={70}
         />
         <h2 className="text-2xl font-bold tracking-wide">
           <span className="md:block hidden uppercase font-sans">

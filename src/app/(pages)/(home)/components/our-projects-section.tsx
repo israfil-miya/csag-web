@@ -33,8 +33,9 @@ export default function OurWorkSection() {
                   src={p.image}
                   alt={p.title}
                   fill
-                  sizes="(max-width:768px) 100vw, 400px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                   className="object-cover hover:scale-110 transition-transform duration-500"
+                  quality={70}
                 />
                 <span className="absolute top-3 left-3 px-2.5 py-1 text-[11px] font-semibold tracking-wide rounded-minimal bg-white/85 backdrop-blur-sm text-csag-primary">
                   {p.status}

@@ -106,8 +106,9 @@ export default async function OurProjectPage({
                   src={w.image}
                   alt={w.title}
                   fill
-                  sizes="(max-width:768px) 100vw, 288px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 288px"
                   className="object-cover transition-transform duration-500"
+                  quality={70}
                 />
                 <span className="absolute top-3 left-3 px-2.5 py-1 text-[11px] font-semibold tracking-wide rounded-minimal bg-white/85 backdrop-blur-sm text-csag-primary">
                   {w.status}

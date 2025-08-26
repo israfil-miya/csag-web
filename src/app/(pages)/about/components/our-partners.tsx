@@ -30,6 +30,8 @@ export default function OurPartners() {
                 height={140}
                 className="w-auto h-32 object-contain"
                 priority
+                sizes="(max-width: 768px) 50vw, 260px"
+                quality={70}
               />
             </div>
           </div>
@@ -74,6 +76,8 @@ export default function OurPartners() {
                   width={140}
                   height={70}
                   loading="lazy"
+                  sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 140px"
+                  quality={70}
                   className="max-h-12 w-auto object-contain filter drop-shadow-[0_0_0.5px_rgba(0,0,0,0.35)] grayscale group-hover:grayscale-0 transition-all duration-300"
                 />
                 <span className="sr-only">{p.name}</span>

@@ -96,6 +96,7 @@ export default function VolunteerPage() {
             priority
             className="object-cover"
             sizes="100vw"
+            quality={70}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
         </div>
@@ -208,6 +209,8 @@ export default function VolunteerPage() {
                     width={56}
                     height={56}
                     className="h-14 w-14 rounded-lg object-cover"
+                    sizes="56px"
+                    quality={70}
                   />
                   <div>
                     <span className="block font-semibold text-gray-900">

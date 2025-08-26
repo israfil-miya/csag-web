@@ -12,6 +12,8 @@ export default function AboutHero() {
         width={1920}
         height={600}
         priority
+        sizes="100vw"
+        quality={70}
       />
 
       {/* Gradient Overlay */}

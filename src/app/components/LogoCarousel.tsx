@@ -64,6 +64,8 @@ export default function LogoCarousel({
                 width={160}
                 height={80}
                 loading="lazy"
+                sizes="(max-width: 768px) 120px, 160px"
+                quality={70}
                 className={clsx(
                   "h-12 md:h-14 w-auto object-contain filter drop-shadow-[0_0_0.5px_rgba(0,0,0,0.35)]",
                   grayscale &&

@@ -71,6 +71,8 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
             width={80}
             height={80}
             className="h-20 w-20 rounded-lg object-cover border border-gray-200"
+            sizes="80px"
+            quality={70}
           />
         </Link>
         <div className="flex-1">
