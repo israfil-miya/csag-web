@@ -6,8 +6,8 @@ export default function TeamHero() {
     <div className="relative h-[500px] md:h-[600px] overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/images/photoshoot/teachers-teaching-in-class.jpg"
-        alt="CSAG team members"
+        src="/images/photoshoot/teachers-teaching-in-class.webp"
+        alt="Teachers teaching in class"
         className="w-full h-full object-cover"
         width={1920}
         height={600}
@@ -31,7 +31,7 @@ export default function TeamHero() {
             <div className="flex flex-wrap gap-6 animate-slide-up">
               <Link
                 href="#founder"
-                className="bg-csag-accent hover:bg-csag-accent-light text-white font-bold py-4 px-10 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
+                className="bg-csag-accent-dark hover:bg-csag-accent-darker text-white font-bold py-4 px-10 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
               >
                 Meet Our Founder
               </Link>

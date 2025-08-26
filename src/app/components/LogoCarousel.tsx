@@ -65,7 +65,7 @@ export default function LogoCarousel({
                 height={80}
                 loading="lazy"
                 className={clsx(
-                  "h-12 md:h-14 w-auto object-contain",
+                  "h-12 md:h-14 w-auto object-contain filter drop-shadow-[0_0_0.5px_rgba(0,0,0,0.35)]",
                   grayscale &&
                     "grayscale group-hover:grayscale-0 transition-all"
                 )}

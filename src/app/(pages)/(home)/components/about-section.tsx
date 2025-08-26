@@ -57,8 +57,8 @@ export default function AboutSection() {
             <div className="relative overflow-hidden">
               <div className="hidden sm:block absolute -top-6 -left-6 w-32 h-32 bg-csag-primary/20 rounded-lg opacity-60"></div>
               <Image
-                src="/images/photoshoot/everyone-hands-up.jpg"
-                alt="CSAG team members working with children"
+                src="/images/photoshoot/everyone-hands-up.webp"
+                alt="Children in rural Ghana raising their hands"
                 className="w-full h-auto rounded-lg relative z-10 hover:translate-y-[-2px] transition-transform duration-300"
                 width={600}
                 height={400}

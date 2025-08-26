@@ -52,7 +52,8 @@ export default function OurImpact() {
         <div className="text-center">
           <Link
             href="/our-projects"
-            className="inline-flex items-center bg-csag-accent-light text-white font-semibold px-8 py-3 rounded-minimal hover:bg-csag-accent transition-all duration-300 hover:translate-y-[-2px] group"
+            className="inline-flex items-center bg-csag-accent-dark text-white font-semibold px-8 py-3 rounded-minimal hover:bg-csag-accent-darker transition-all duration-300 hover:translate-y-[-2px] group"
+            aria-label="View our detailed impact report"
           >
             View our detailed impact report
             <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />

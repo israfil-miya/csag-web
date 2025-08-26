@@ -56,6 +56,8 @@ export default function OurWorkSection() {
                   <Link
                     href={`/our-projects/${p.slug}`}
                     className="inline-flex items-center text-csag-primary font-semibold hover:text-csag-primary-dark transition-colors group"
+                    aria-label={`Read more about ${p.title}`}
+                    title={`Read more about ${p.title}`}
                   >
                     Read more
                     <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />

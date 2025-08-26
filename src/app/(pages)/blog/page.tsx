@@ -3,26 +3,44 @@ import Link from "next/link";
 import Tags from "./components/tags";
 import { getAllPosts } from "./lib/posts";
 
-export const metadata = {
-  title: "Blog & News — Child Survival Aid Ghana",
-  description:
-    "Stories, updates, and impact from CSAG’s projects and communities across Ghana.",
-  alternates: { canonical: "/blog" },
-  openGraph: {
-    title: "Blog & News — CSAG",
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string | string[] }>;
+}) {
+  const sp = await searchParams;
+  const pageParam =
+    typeof sp?.page === "string"
+      ? sp.page
+      : Array.isArray(sp?.page)
+      ? sp.page[0]
+      : undefined;
+  const page = Math.max(1, parseInt(pageParam || "1", 10) || 1);
+  const suffix = page > 1 ? `?page=${page}` : "";
+  const url = `/blog${suffix}`;
+  return {
+    title: "Blog & News — Child Survival Aid Ghana",
     description:
       "Stories, updates, and impact from CSAG’s projects and communities across Ghana.",
-    url: "/blog",
-    images: [{ url: "/images/csag-logo-no-bg.png", width: 1200, height: 800 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Blog & News — CSAG",
-    description:
-      "Stories, updates, and impact from CSAG’s projects and communities across Ghana.",
-    images: ["/images/csag-logo-no-bg.png"],
-  },
-};
+    alternates: { canonical: url },
+    openGraph: {
+      title: "Blog & News — CSAG",
+      description:
+        "Stories, updates, and impact from CSAG’s projects and communities across Ghana.",
+      url,
+      images: [
+        { url: "/images/csag-logo-no-bg.webp", width: 1200, height: 800 },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Blog & News — CSAG",
+      description:
+        "Stories, updates, and impact from CSAG’s projects and communities across Ghana.",
+      images: ["/images/csag-logo-no-bg.webp"],
+    },
+  } as const;
+}
 
 export default async function BlogIndexPage({
   searchParams,
@@ -143,7 +161,7 @@ export default async function BlogIndexPage({
           <div className="flex gap-3">
             <button
               type="submit"
-              className="inline-flex items-center bg-csag-accent hover:bg-csag-accent-light text-white font-semibold px-4 py-2 rounded-minimal text-sm"
+              className="inline-flex items-center bg-csag-accent-dark hover:bg-csag-accent-darker text-white font-semibold px-4 py-2 rounded-minimal text-sm"
             >
               Apply
             </button>

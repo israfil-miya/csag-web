@@ -14,7 +14,8 @@ function NavLink(
   text: string,
   pathname: string,
   dropdown: boolean = false,
-  onClick?: () => void
+  onClick?: () => void,
+  ariaExpanded?: boolean
 ) {
   if (dropdown) {
     return (
@@ -26,6 +27,9 @@ function NavLink(
             ? "underline underline-offset-4 decoration-2 decoration-csag-primary"
             : ""
         )}
+        aria-haspopup="menu"
+        aria-expanded={ariaExpanded}
+        aria-label={`${text} menu`}
       >
         {text} <ChevronDown size={16} />
       </button>
@@ -142,7 +146,7 @@ function Nav() {
         className="flex cursor-pointer items-center space-x-4"
       >
         <Image
-          src="/images/csag-logo-no-bg.png"
+          src="/images/csag-logo-no-bg.webp"
           alt="Logo"
           width={80}
           height={80}
@@ -159,8 +163,13 @@ function Nav() {
         <nav className="space-x-8 flex flex-row items-center">
           {NavLink("/", "Home", currentPath)}
           <div className="relative" ref={aboutRef}>
-            {NavLink("/about", "About Us", currentPath, true, () =>
-              setIsAboutDropdownOpen((o) => !o)
+            {NavLink(
+              "/about",
+              "About Us",
+              currentPath,
+              true,
+              () => setIsAboutDropdownOpen((o) => !o),
+              isAboutDropdownOpen
             )}
             {isAboutDropdownOpen && (
               <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-minimal border border-gray-100 py-2 z-50">
@@ -183,8 +192,13 @@ function Nav() {
           </div>
           {NavLink("/our-projects", "Our Projects", currentPath)}
           <div className="relative" ref={involvedRef}>
-            {NavLink("/get-involved", "Get Involved", pathname, true, () =>
-              setIsInvolvedDropdownOpen((o) => !o)
+            {NavLink(
+              "/get-involved",
+              "Get Involved",
+              pathname,
+              true,
+              () => setIsInvolvedDropdownOpen((o) => !o),
+              isInvolvedDropdownOpen
             )}
             {isInvolvedDropdownOpen && (
               <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-minimal border border-gray-100 py-2 z-50">
@@ -217,9 +231,11 @@ function Nav() {
         <div className="flex items-center space-x-4">
           <Link
             href="/donate"
-            className="bg-csag-accent hover:bg-csag-accent-light text-white px-8 py-3 uppercase font-sans tracking-wide rounded-minimal duration-200 ease-in-out cursor-pointer font-bold transition-all hover:translate-y-[-1px]"
+            className="bg-csag-accent-dark hover:bg-csag-accent-darker text-white px-8 py-3 uppercase font-sans tracking-wide rounded-minimal duration-200 ease-in-out cursor-pointer font-bold transition-all hover:translate-y-[-1px]"
+            aria-label="Donate Now"
+            title="Donate Now"
           >
-            DONATE
+            DONATE NOW
           </Link>
         </div>
       </div>
@@ -229,6 +245,10 @@ function Nav() {
           className="inline-flex hover:cursor-pointer items-center text-sm p-2 text-gray-600 rounded-minimal hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-csag-primary transition-all duration-200"
           aria-controls="mobile-nav"
           aria-expanded={isMobileOpen}
+          aria-label={
+            isMobileOpen ? "Close navigation menu" : "Open navigation menu"
+          }
+          title={isMobileOpen ? "Close menu" : "Open menu"}
           onClick={() => setIsMobileOpen((o) => !o)}
         >
           {isMobileOpen ? <X size={28} /> : <Menu size={28} />}
@@ -391,10 +411,12 @@ function Nav() {
             <div className="pt-2 pb-3 px-2">
               <Link
                 href="/donate"
-                className="block text-center bg-csag-accent hover:bg-csag-accent-light text-white px-6 py-3 uppercase font-sans tracking-wide rounded-minimal font-bold transition-all duration-200 hover:translate-y-[-1px]"
+                className="block text-center bg-csag-accent-dark hover:bg-csag-accent-darker text-white px-6 py-3 uppercase font-sans tracking-wide rounded-minimal font-bold transition-all duration-200 hover:translate-y-[-1px]"
                 onClick={() => setIsMobileOpen(false)}
+                aria-label="Donate Now"
+                title="Donate Now"
               >
-                DONATE
+                DONATE NOW
               </Link>
             </div>
           </div>

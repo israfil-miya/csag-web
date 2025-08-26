@@ -10,7 +10,7 @@ tags:
     "junior-high",
     "community-development",
   ]
-thumbnail: "/images/projects/new-classroom-and-office-block-project-at-abuvie-kpong-d-a-basic-school.jpg"
+thumbnail: "/images/projects/new-classroom-and-office-block-project-at-abuvie-kpong-d-a-basic-school.webp"
 excerpt: "Progress update on the three-unit classroom and office block at Abuvie-Kpong D/A Basic School, enhancing learning spaces, accessibility, and administration for Junior High students."
 ---
 

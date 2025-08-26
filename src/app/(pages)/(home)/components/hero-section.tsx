@@ -6,8 +6,8 @@ export default function HeroSection() {
     <div className="relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/images/photoshoot/IMG_1039.jpg"
-        alt="Children in a classroom"
+        src="/images/photoshoot/new-school-building-nz-fund.webp"
+        alt="New school building funded by New Zealand Embassy Fund"
         className="w-full h-full object-cover"
         width={1920}
         height={800}
@@ -34,7 +34,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-6 animate-slide-up">
               <Link
                 href="/donate"
-                className="bg-csag-accent hover:bg-csag-accent-light text-white font-bold py-4 px-10 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
+                className="bg-csag-accent-dark hover:bg-csag-accent-darker text-white font-bold py-4 px-10 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
               >
                 DONATE NOW
               </Link>

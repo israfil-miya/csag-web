@@ -38,7 +38,7 @@ async function getLogoAttachment() {
       process.cwd(),
       "public",
       "images",
-      "csag-logo-no-bg.png"
+      "csag-logo-no-bg.webp"
     );
     const buf = await fs.readFile(logoPath);
     return {

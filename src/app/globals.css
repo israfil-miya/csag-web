@@ -83,7 +83,8 @@
     @apply inline-flex items-center justify-center bg-csag-primary hover:bg-csag-primary/90 text-white font-semibold px-6 py-3 rounded-minimal transition-all duration-200 hover:translate-y-[-1px] disabled:opacity-60;
   }
   .csag-button-accent {
-    @apply inline-flex items-center justify-center bg-csag-accent hover:bg-csag-accent-light text-white font-semibold px-6 py-3 rounded-minimal transition-all duration-200 hover:translate-y-[-1px] disabled:opacity-60;
+    /* Orange on dark text ensures >= 4.5:1 contrast */
+    @apply inline-flex items-center justify-center bg-csag-accent hover:bg-csag-accent-dark text-gray-900 font-semibold px-6 py-3 rounded-minimal transition-all duration-200 hover:translate-y-[-1px] disabled:opacity-60;
   }
   .prose table {
     @apply w-full text-sm border-collapse;

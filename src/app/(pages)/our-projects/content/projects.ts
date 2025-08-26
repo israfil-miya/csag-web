@@ -23,7 +23,7 @@ export const projects: ProjectItem[] = [
     sponsor: "Footprint Possibilities Inc.",
     partner: "Book For Africa",
     contributors: ["Ghana Book Trust"],
-    image: "/images/projects/ghana-education-service-tema-west-donation.jpg",
+    image: "/images/projects/ghana-education-service-tema-west-donation.webp",
     excerpt:
       "Providing diverse books to inspire lifelong reading habits, enrich students' educational experiences in Tema West, and foster a strong reading culture within the community.",
     description: [
@@ -39,7 +39,7 @@ export const projects: ProjectItem[] = [
     sponsor: "Australian High Commission under the Direct Aid Program (DAP)",
     location: "Kasunya – Shai-Osudoku District",
     image:
-      "/images/projects/refurbishment-of-the-kasunya-d-a-kindergarten-classroom.jpg",
+      "/images/projects/refurbishment-of-the-kasunya-d-a-kindergarten-classroom.webp",
     excerpt:
       "Refurbished the Kindergarten classroom at Kasunya D/A School with child-friendly furniture to create a more engaging and comfortable learning space, encouraging creativity and active participation among young learners.",
     description: [
@@ -56,7 +56,7 @@ export const projects: ProjectItem[] = [
     sponsor: "Third World Group Foundation, Netherlands",
     location: "Klagon - Tema West",
     image:
-      "/images/projects/klagon-twma-basic-school-library-refurbishment.jpg",
+      "/images/projects/klagon-twma-basic-school-library-refurbishment.webp",
     excerpt:
       "Refurbished Klagon TWMA Basic School Library to revive reading culture, provide an inviting learning space for pupils, and support one-on-one learning and student–teacher engagement.",
     description: [
@@ -71,7 +71,7 @@ export const projects: ProjectItem[] = [
     status: "Completed",
     sponsor: "Australian High Commission under the Direct Aid Program (DAP)",
     location: "Kasunya - Shai-Osudoku District",
-    image: "/images/projects/kasunya-r-c-basic-school-library.jpg",
+    image: "/images/projects/kasunya-r-c-basic-school-library.webp",
     excerpt:
       "Upgraded library facilities at Kasunya R/C Basic School to support students' academic growth, foster a love for reading, and strengthen community engagement and learning opportunities.",
     description: [
@@ -86,7 +86,7 @@ export const projects: ProjectItem[] = [
     status: "Completed",
     sponsor: "New Zealand Embassy Fund",
     image:
-      "/images/projects/construction-of-4-unit-classroom-at-mafi-kpeyibor-d-a-basic-school.jpg",
+      "/images/projects/construction-of-4-unit-classroom-at-mafi-kpeyibor-d-a-basic-school.webp",
     excerpt:
       "Constructed four classrooms in Mafi-Kpeyibor to provide a safe and engaging learning environment, improve educational infrastructure, and support effective teaching and academic success.",
     description: [
@@ -97,12 +97,12 @@ export const projects: ProjectItem[] = [
     slug: "mafi-kpeyibor-portable-water-project",
     title:
       "Provision of Portable Drinking Water for Mafi-Kpeyibor D/A Basic School",
-    date: "2025-07-10",
+    date: "2025-03-28",
     sector: "Water",
     status: "Completed",
     sponsor: "Water Charity",
     image:
-      "/images/projects/provision-of-portable-drinking-water-for-mafi-kpeyibor-d-a-basic-school.jpg",
+      "/images/projects/provision-of-portable-drinking-water-for-mafi-kpeyibor-d-a-basic-school.webp",
     excerpt:
       "Installed a clean water supply at Mafi-Kpeyibor D/A Basic School to ensure safe drinking water, improve student health, and create a more conducive learning environment for the entire school community.",
     description: [
@@ -112,11 +112,11 @@ export const projects: ProjectItem[] = [
   {
     slug: "mafi-dedukope-clinic-water-project",
     title: "Mafi-Dedukope Clinic Water Project",
-    date: "2025-07-10",
+    date: "2025-04-18",
     sector: "Water",
     status: "Completed",
     sponsor: "Water Charity",
-    image: "/images/projects/mafi-dedukope-clinic-water-project.jpg",
+    image: "/images/projects/mafi-dedukope-clinic-water-project.webp",
     excerpt:
       "Installed a borehole and water storage system at Mafi-Dedukope Clinic to provide a reliable supply of clean water, enhance healthcare outcomes, and support community well-being.",
     description: [
@@ -126,12 +126,12 @@ export const projects: ProjectItem[] = [
   {
     slug: "kasunya-rc-basic-school-computer-lab",
     title: "Kasunya R/C Basic School Computer Lab",
-    date: "2025-07-10",
+    date: "2025-05-30",
     sector: "Education",
     status: "Completed",
     sponsor: "Australian High Commission's Direct Aid Program (DAP)",
     location: "Kasunya, Shai-Osudoku District",
-    image: "/images/projects/kasunya-r-c-basic-school-computer-lab.jpg",
+    image: "/images/projects/kasunya-r-c-basic-school-computer-lab.webp",
     excerpt:
       "Completed a computer lab at Kasunya R/C Basic School to enhance students' digital literacy, provide access to modern technology, and prepare learners for future education and employment opportunities.",
     description: [
@@ -139,15 +139,154 @@ export const projects: ProjectItem[] = [
     ],
   },
   {
+    slug: "kotobabi-no-cluster-of-schools-donation",
+    title: "Kotobabi No. Cluster of Schools Donation",
+    date: "2025-02-26",
+    sector: "Education",
+    status: "Completed",
+    sponsor: "African Library Project",
+    partner: "Michael Lapsley Foundation",
+    image: "/images/projects/kotobabi-no-cluster-of-schools-donation.webp",
+    excerpt:
+      "Donated assorted library books to Kotobabi No. Cluster of Schools to promote early literacy and a reading culture.",
+    description: [
+      "CSAG donated assorted library books to the school to help promote early literacy and a reading culture amongst the school children. The objective under this program is to improve, restore and revive the loss of reading ability among school children in the school. By providing access to a diverse range of books, we hope to inspire a lifelong love of reading and enhance the educational experience for students in the community. Thank you to our partners and contributors for their support in making this donation possible!",
+    ],
+  },
+  {
+    slug: "mafi-kpeyibor-d-a-basic-school-donation",
+    title: "Mafi-Kpeyibor D/A Basic School Donation",
+    date: "2025-03-05",
+    sector: "Education",
+    status: "Completed",
+    sponsor: "Biblionef Ghana",
+    image: "/images/projects/mafi-kpeyibor-d-a-basic-school-donation.webp",
+    excerpt:
+      "Donated assorted library books to Mafi-Kpeyibor D/A Basic School to promote early literacy and a reading culture.",
+    description: [
+      "CSAG donated assorted library books to the school to help promote early literacy and a reading culture amongst the school children. The objective under this program is to improve, restore and revive the loss of reading ability among school children in the school. By providing access to a diverse range of books, we hope to inspire a lifelong love of reading and enhance the educational experience for students in the community. Thank you to our partners and contributors for their support in making this donation possible!",
+    ],
+  },
+  {
+    slug: "mafi-aklamador-d-a-basic-school-donation",
+    title: "Mafi-Aklamador D/A Basic School Donation",
+    date: "2024-12-12",
+    sector: "Education",
+    status: "Completed",
+    sponsor: "Footprint Possibilities Inc.",
+    partner: "Book For Africa",
+    contributors: ["Ghana Book Trust"],
+    image: "/images/projects/mafi-aklamador-d-a-basic-school-donation.webp",
+    excerpt:
+      "Donated assorted library books to Mafi-Aklamador D/A Basic School to promote early literacy and a reading culture.",
+    description: [
+      "CSAG donated assorted library books to the school to help promote early literacy and a reading culture amongst the school children. The objective under this program is to improve, restore and revive the loss of reading ability among school children in the school. By providing access to a diverse range of books, we hope to inspire a lifelong love of reading and enhance the educational experience for students in the community. Thank you to our partners and contributors for their support in making this donation possible!",
+    ],
+  },
+  {
+    slug: "dela-outreach-school-donation",
+    title: "Dela Outreach School Donation",
+    date: "2024-12-22",
+    sector: "Education",
+    status: "Completed",
+    sponsor: "African Library Project",
+    partner: "Ghana Book Trust",
+    image: "/images/projects/dela-outreach-school-donation.webp",
+    excerpt:
+      "Donated assorted library books to Dela Outreach School to promote early literacy and a reading culture.",
+    description: [
+      "CSAG donated assorted library books to the school to help promote early literacy and a reading culture amongst the school children. The objective under this program is to improve, restore and revive the loss of reading ability among school children in the school. By providing access to a diverse range of books, we hope to inspire a lifelong love of reading and enhance the educational experience for students in the community. Thank you to our partners and contributors for their support in making this donation possible!",
+    ],
+  },
+  {
+    slug: "arms-of-god-international-school-donation",
+    title: "Arms of God International School Donation",
+    date: "2025-01-14",
+    sector: "Education",
+    status: "Completed",
+    sponsor: "African Library Project",
+    partner: "Ghana Book Trust",
+    image: "/images/projects/arms-of-god-international-school-donation.webp",
+    excerpt:
+      "Donated assorted library books to Arms of God International School to promote early literacy and a reading culture.",
+    description: [
+      "CSAG donated assorted library books to the school to help promote early literacy and a reading culture amongst the school children. The objective under this program is to improve, restore and revive the loss of reading ability among school children in the school. By providing access to a diverse range of books, we hope to inspire a lifelong love of reading and enhance the educational experience for students in the community. Thank you to our partners and contributors for their support in making this donation possible!",
+    ],
+  },
+  {
+    slug: "old-lashibi-twma-jhs-donation",
+    title: "Old Lashibi TWMA JHS Donation",
+    date: "2025-01-28",
+    sector: "Education",
+    status: "Completed",
+    sponsor: "Footprint Possibilities Inc.",
+    partner: "Book for Africa",
+    contributors: ["Ghana Book Trust"],
+    image: "/images/projects/old-lashibi-twma-jhs-donation.webp",
+    excerpt:
+      "Donated assorted library books to Old Lashibi TWMA JHS to promote early literacy and a reading culture.",
+    description: [
+      "CSAG donated assorted library books to the school to help promote early literacy and a reading culture amongst the school children. The objective under this program is to improve, restore and revive the loss of reading ability among school children in the school. By providing access to a diverse range of books, we hope to inspire a lifelong love of reading and enhance the educational experience for students in the community. Thank you to our partners and contributors for their support in making this donation possible!",
+    ],
+  },
+  {
+    slug: "sakumono-twma-basic-school-donation",
+    title: "Sakumono TWMA Basic School Donation",
+    date: "2025-02-12",
+    sector: "Education",
+    status: "Completed",
+    sponsor: "Footprint Possibilities Inc.",
+    partner: "Book for Africa",
+    contributors: ["Ghana Book Trust"],
+    image: "/images/projects/sakumono-twma-basic-school-donation.webp",
+    excerpt:
+      "Donated assorted library books to Sakumono TWMA Basic School to promote early literacy and a reading culture.",
+    description: [
+      "CSAG donated assorted library books to the school to help promote early literacy and a reading culture amongst the school children. The objective under this program is to improve, restore and revive the loss of reading ability among school children in the school. By providing access to a diverse range of books, we hope to inspire a lifelong love of reading and enhance the educational experience for students in the community. Thank you to our partners and contributors for their support in making this donation possible!",
+    ],
+  },
+  {
+    slug: "great-future-stars-academy-donation",
+    title: "Great Future Stars Academy Donation",
+    date: "2025-03-19",
+    sector: "Education",
+    status: "Completed",
+    sponsor: "Footprint Possibilities Inc.",
+    partner: "Book for Africa",
+    contributors: ["Ghana Book Trust"],
+    image: "/images/projects/great-future-stars-academy-donation.webp",
+    excerpt:
+      "Donated assorted library books to Great Future Stars Academy to promote early literacy and a reading culture.",
+    description: [
+      "CSAG donated assorted library books to the school to help promote early literacy and a reading culture amongst the school children. The objective under this program is to improve, restore and revive the loss of reading ability among school children in the school. By providing access to a diverse range of books, we hope to inspire a lifelong love of reading and enhance the educational experience for students in the community. Thank you to our partners and contributors for their support in making this donation possible!",
+    ],
+  },
+  {
+    slug: "adjei-kojo-twma-cluster-of-schools-donation",
+    title: "Adjei-Kojo TWMA Cluster of Schools Donation",
+    date: "2025-04-09",
+    sector: "Education",
+    status: "Completed",
+    sponsor: "Footprint Possibilities Inc.",
+    partner: "Book for Africa",
+    contributors: ["Ghana Book Trust"],
+    image: "/images/projects/adjei-kojo-twma-cluster-of-schools-donation.webp",
+    excerpt:
+      "Donated assorted library books to Adjei-Kojo TWMA Cluster of Schools to promote early literacy and a reading culture.",
+    description: [
+      "CSAG donated assorted library books to the school to help promote early literacy and a reading culture amongst the school children. The objective under this program is to improve, restore and revive the loss of reading ability among school children in the school. By providing access to a diverse range of books, we hope to inspire a lifelong love of reading and enhance the educational experience for students in the community. Thank you to our partners and contributors for their support in making this donation possible!",
+    ],
+  },
+  {
     slug: "new-classroom-and-office-block-project-at-abuvie-kpong-d-a-basic-school",
     title:
       "New Classroom and Office Block Project at Abuvie-Kpong D/A Basic School",
-    date: "2025-07-10",
+    date: "2025-05-12",
     sector: "Education",
     status: "Ongoing",
     location: "Abuvie-Kpong, Manya-Krobo District",
     image:
-      "/images/projects/new-classroom-and-office-block-project-at-abuvie-kpong-d-a-basic-school.jpg",
+      "/images/projects/new-classroom-and-office-block-project-at-abuvie-kpong-d-a-basic-school.webp",
     excerpt:
       "Constructing a three-unit classroom and office block at Abuvie-Kpong D/A Basic School to enhance learning spaces, support administrative functions, and foster community engagement.",
     description: [
@@ -170,7 +309,7 @@ PROJECT OBJECTIVES:
     sector: "Health",
     status: "Ongoing",
     location: "Mefi-Dedukope, Dangme West district",
-    image: "/images/projects/mefi-dedukope-new-clinic-project.jpg",
+    image: "/images/projects/mefi-dedukope-new-clinic-project.webp",
     excerpt:
       "Constructing a new clinic in Mafi-Dedukope to improve healthcare access, provide modern medical facilities, and promote community health education.",
     description: [

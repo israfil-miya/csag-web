@@ -3,7 +3,7 @@ title: "Volunteerism and Civic Responsibility: Strengthening Ghanaian Communitie
 date: "2025-08-20"
 author: "Israfil Miya"
 tags: ["volunteerism", "ghana", "csag"]
-thumbnail: "/images/photoshoot/IMG-20210219-WA0018.jpg"
+thumbnail: "/images/photoshoot/volunteers-in-red.webp"
 excerpt: "Volunteerism and civic responsibility are vital for strengthening Ghanaian communities. Structured initiatives, like those led by CSAG, improve education, health, and social cohesion from within."
 ---
 

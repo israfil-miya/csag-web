@@ -1,8 +1,6 @@
 import React from "react";
 import AboutSection from "./components/about-section";
-// import CauseCarousel from "./components/cause-carousel";
 import HeroSection from "./components/hero-section";
-// import ImpactBanner from "./components/impact-banner";
 import MissionSection from "./components/mission-section";
 import OurImpact from "./components/our-impact";
 import OurProjectSection from "./components/our-projects-section";
@@ -21,10 +19,10 @@ export const metadata = {
     url: "/",
     images: [
       {
-        url: "/images/photoshoot/everyone-hands-up.jpg",
+        url: "/images/photoshoot/everyone-hands-up.webp",
         width: 1200,
         height: 630,
-        alt: "Children learning with CSAG support",
+        alt: "Children in rural Ghana raising their hands",
       },
     ],
   },
@@ -33,7 +31,7 @@ export const metadata = {
     title: "Child Survival Aid Ghana (CSAG)",
     description:
       "Expanding learning opportunities for children in rural Ghana through resources, trained educators, and supportive environments.",
-    images: ["/images/photoshoot/everyone-hands-up.jpg"],
+    images: ["/images/photoshoot/everyone-hands-up.webp"],
   },
 };
 

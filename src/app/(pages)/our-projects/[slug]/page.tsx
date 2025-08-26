@@ -149,7 +149,7 @@ export default async function ProjectDetailPage({
             <div className="pt-4 border-t border-gray-200">
               <Link
                 href="/donate"
-                className="inline-block bg-csag-accent hover:bg-csag-accent-light text-white font-bold py-3 px-6 rounded-minimal transition-all duration-300 hover:translate-y-[-2px] text-sm"
+                className="inline-block bg-csag-accent-dark hover:bg-csag-accent-darker text-white font-bold py-3 px-6 rounded-minimal transition-all duration-300 hover:translate-y-[-2px] text-sm"
               >
                 SUPPORT OUR WORK
               </Link>

@@ -23,14 +23,14 @@ export const metadata = {
     description:
       "Share your skills to improve education and wellbeing in rural Ghana.",
     url: "/volunteer",
-    images: [{ url: "/images/csag-logo-no-bg.png", width: 1200, height: 800 }],
+    images: [{ url: "/images/csag-logo-no-bg.webp", width: 1200, height: 800 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Volunteer with CSAG",
     description:
       "Share your skills to improve education and wellbeing in rural Ghana.",
-    images: ["/images/csag-logo-no-bg.png"],
+    images: ["/images/csag-logo-no-bg.webp"],
   },
 };
 
@@ -90,8 +90,8 @@ export default function VolunteerPage() {
       <div className="relative">
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="/images/photoshoot/everyone-hands-up.jpg"
-            alt="Volunteers and students raising hands"
+            src="/images/photoshoot/everyone-hands-up.webp"
+            alt="Children in rural Ghana raising their hands"
             fill
             priority
             className="object-cover"
@@ -112,7 +112,7 @@ export default function VolunteerPage() {
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="#apply"
-                className="inline-flex items-center bg-csag-accent hover:bg-csag-accent-light text-white font-semibold px-6 py-3 rounded-minimal transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center bg-csag-accent-dark hover:bg-csag-accent-darker text-white font-semibold px-6 py-3 rounded-minimal transition-transform hover:-translate-y-0.5"
               >
                 Become a Volunteer
                 <ArrowRight className="h-4 w-4 ml-2" aria-hidden />

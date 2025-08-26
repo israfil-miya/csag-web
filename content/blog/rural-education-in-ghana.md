@@ -3,7 +3,7 @@ title: "Rural Education in Ghana: A Foundation for Sustainable National Developm
 date: "2025-08-20"
 author: "Israfil Miya"
 tags: ["rural-education", "ghana", "csag", "sustainable-development"]
-thumbnail: "/images/photoshoot/kids-after-school.jpg"
+thumbnail: "/images/photoshoot/kids-after-school.webp"
 excerpt: "Rural education in Ghana faces gaps in access, infrastructure, and teachers. Targeted investment can boost learning and drive sustainable growth."
 ---
 

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
       "CSAG expands learning opportunities for children in rural Ghana through books, trained educators, safe spaces and community support.",
     images: [
       {
-        url: "/images/csag-logo-no-bg.png",
+        url: "/images/csag-logo-no-bg.webp",
         width: 800,
         height: 800,
         alt: "CSAG Logo",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Child Survival Aid Ghana (CSAG)",
     description:
       "CSAG expands learning opportunities for children in rural Ghana through books, trained educators, safe spaces and community support.",
-    images: ["/images/csag-logo-no-bg.png"],
+    images: ["/images/csag-logo-no-bg.webp"],
   },
   robots: {
     index: true,

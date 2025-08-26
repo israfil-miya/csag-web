@@ -65,7 +65,7 @@ export default function MissionSection() {
           <div className="lg:flex">
             <div className="lg:w-1/2 p-8 lg:p-12">
               <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                Our <span className="text-csag-accent">Approach</span>
+                Our <span className="text-csag-accent-dark">Approach</span>
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed text-lg">
                 Our approach blends resource provision, educator empowerment and
@@ -85,7 +85,7 @@ export default function MissionSection() {
             </div>
             <div className="lg:w-1/2">
               <Image
-                src="/images/photoshoot/IMG_20230425_115805_MP.jpg"
+                src="/images/photoshoot/children-in-a-classroom.webp"
                 alt="Children in a classroom"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 width={600}

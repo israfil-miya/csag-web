@@ -105,24 +105,87 @@ export const reasons = [
 export const featuredPartner = {
   name: "Government of Australia",
   highlight: "Australia",
-  logo: "/images/partners/australian_aid-no-bg.png",
+  logo: "/images/partners/australian_aid.webp",
   description:
     "The Government of Australia, through the Australian High Commission's Direct Aid Program (DAP), funded key improvements at Kasunya D/A and R/C Basic Schools. Their support enabled the kindergarten refurbishment, the creation of a modern computer lab, and a renovated library, improving learning spaces and digital access. We sincerely thank DAP for strengthening educational opportunities and the future prospects of children in Shai-Osudoku.",
   link: "",
 };
 
 export const supporters: { name: string; logo: string }[] = [
-  { name: "Anike Foundation", logo: "/images/partners/anike_foundation.jpg" },
-  { name: "Books For Africa", logo: "/images/partners/books_for_africa.jpg" },
   {
-    name: "Government of Ireland",
-    logo: "/images/partners/Government-of-Ireland-Logo.png",
+    name: "African Library Project",
+    logo: "/images/partners/african_library_project.webp",
   },
-
-  { name: "Good Deeds Day", logo: "/images/partners/good_deeds_day.jpg" },
-  { name: "Water Charity", logo: "/images/partners/water_charity.jpg" },
+  {
+    name: "Anike Foundation",
+    logo: "/images/partners/anike_foundation.webp",
+  },
+  {
+    name: "Australian Aid",
+    logo: "/images/partners/australian_aid.webp",
+  },
+  {
+    name: "Biblionef",
+    logo: "/images/partners/biblionef.webp",
+  },
+  {
+    name: "Books for Africa",
+    logo: "/images/partners/books_for_africa.webp",
+  },
+  {
+    name: "Bridge Africa Foundation",
+    logo: "/images/partners/bridge_africa_foundation.webp",
+  },
+  {
+    name: "Chezuba",
+    logo: "/images/partners/chezuba.webp",
+  },
+  {
+    name: "Darien Book Aid",
+    logo: "/images/partners/darien_book_aid.webp",
+  },
+  {
+    name: "Derde Wereld Groep",
+    logo: "/images/partners/derde_wereld_groep.webp",
+  },
   {
     name: "Education Saves Lives",
-    logo: "/images/partners/education_saves_lives.jpg",
+    logo: "/images/partners/education_saves_lives.webp",
+  },
+  {
+    name: "Footprint Possibilities",
+    logo: "/images/partners/footprint_possibilities.webp",
+  },
+  {
+    name: "Ghana Education Service",
+    logo: "/images/partners/ghana_education_service.webp",
+  },
+  {
+    name: "Good Deeds Day",
+    logo: "/images/partners/good_deeds_day.webp",
+  },
+  {
+    name: "Google",
+    logo: "/images/partners/google.webp",
+  },
+  {
+    name: "Government of Ireland International Development Programme",
+    logo: "/images/partners/govt_of_ireland.webp",
+  },
+  {
+    name: "International Book Project",
+    logo: "/images/partners/intl_book_project.webp",
+  },
+  {
+    name: "New Zealand Foreign Affairs & Trade",
+    logo: "/images/partners/new_zealand_fat.webp",
+  },
+  {
+    name: "TechSoup",
+    logo: "/images/partners/techsoup.webp",
+  },
+  {
+    name: "Water Charity",
+    logo: "/images/partners/water_charity.webp",
   },
 ];

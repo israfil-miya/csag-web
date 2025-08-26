@@ -6,7 +6,7 @@ export default function AboutHero() {
     <div className="relative h-[500px] md:h-[600px] overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/images/photoshoot/reading-book-in-library.JPG"
+        src="/images/photoshoot/reading-book-in-library.webp"
         alt="Children reading in library"
         className="w-full h-full object-cover"
         width={1920}
@@ -32,13 +32,17 @@ export default function AboutHero() {
             <div className="flex flex-wrap gap-6 animate-slide-up">
               <Link
                 href="/donate"
-                className="bg-csag-accent hover:bg-csag-accent-light text-white font-bold py-4 px-10 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
+                className="bg-csag-accent-dark hover:bg-csag-accent-darker text-white font-bold py-4 px-10 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
+                aria-label="Donate to support CSAG"
+                title="Donate to CSAG"
               >
                 DONATE NOW
               </Link>
               <Link
                 href="#story"
                 className="bg-transparent hover:bg-white/10 text-white border-2 border-white font-bold py-4 px-10 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
+                aria-label="Learn more about CSAG’s story"
+                title="Learn more about CSAG"
               >
                 LEARN MORE
               </Link>

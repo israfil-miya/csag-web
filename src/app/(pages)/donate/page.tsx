@@ -33,7 +33,7 @@ export const metadata = {
     url: "/donate",
     images: [
       {
-        url: "/images/csag-logo-no-bg.png",
+        url: "/images/csag-logo-no-bg.webp",
         width: 1200,
         height: 630,
         alt: "Support education through CSAG",
@@ -45,7 +45,7 @@ export const metadata = {
     title: "Donate to CSAG",
     description:
       "Your donation empowers learners with books, safe spaces, and trained educators.",
-    images: ["/images/csag-logo-no-bg.png"],
+    images: ["/images/csag-logo-no-bg.webp"],
   },
 };
 
@@ -79,7 +79,7 @@ export default function DonatePage() {
                 href={GLOBAL_GIVING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-csag-accent hover:bg-csag-accent-light text-white font-bold py-3 px-6 rounded-minimal transition-all duration-300 hover:translate-y-[-2px] inline-flex items-center"
+                className="bg-csag-accent-dark hover:bg-csag-accent-darker text-white font-bold py-3 px-6 rounded-minimal transition-all duration-300 hover:translate-y-[-2px] inline-flex items-center"
               >
                 Donate Now
                 <ArrowRight className="h-5 w-5 ml-2" />
@@ -111,7 +111,7 @@ export default function DonatePage() {
           </div>
           <div className="relative aspect-[16/10] rounded-minimal overflow-hidden bg-gray-100">
             <Image
-              src="/images/photoshoot/IMG_20240117_120038_1.jpg"
+              src="/images/photoshoot/small-kid-looking-straight-into-eyes.webp"
               alt="Children learning in Ghana"
               fill
               className="object-cover"
@@ -164,7 +164,7 @@ export default function DonatePage() {
             </div>
             <div className="relative rounded-minimal overflow-hidden border border-gray-200 bg-gray-50">
               <Image
-                src="/images/photoshoot/IMG_20240319_115144.jpg"
+                src="/images/photoshoot/a-girl-learning-numbers.webp"
                 alt="Smiling students supported by CSAG"
                 fill
                 className="object-cover"

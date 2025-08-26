@@ -48,15 +48,18 @@ export default function Footer() {
           <div>
             <div className="flex items-center mb-6">
               <Image
-                src="/images/csag-logo-no-bg.png"
+                src="/images/csag-logo-no-bg.webp"
                 alt="CSAG Logo"
                 width={50}
                 height={50}
                 className="mr-3"
               />
-              <h4 className="text-xl font-bold text-csag-accent-light tracking-wide">
+              <p
+                className="text-xl font-bold text-csag-accent-light tracking-wide"
+                aria-label="Child Survival Aid Ghana"
+              >
                 CSAG
-              </h4>
+              </p>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Child Survival Aid Ghana is a registered National Non-Profit
@@ -68,13 +71,19 @@ export default function Footer() {
                 target="_blank"
                 href="https://www.facebook.com/csagchildghana"
                 className="text-gray-400 hover:text-blue-400 transition-colors duration-200 hover:scale-110 transform"
+                aria-label="CSAG on Facebook"
+                title="Facebook"
+                rel="noopener noreferrer"
               >
                 <Facebook className="h-6 w-6" />
               </Link>
               <Link
                 target="_blank"
-                href="https://x.com/csagchild "
+                href="https://x.com/csagchild"
                 className="text-gray-400 hover:text-blue-500 transition-colors duration-200 hover:scale-110 transform"
+                aria-label="CSAG on X (Twitter)"
+                title="X (Twitter)"
+                rel="noopener noreferrer"
               >
                 <Twitter className="h-6 w-6" />
               </Link>
@@ -82,6 +91,9 @@ export default function Footer() {
                 target="_blank"
                 href="https://www.instagram.com/csagchildghana"
                 className="text-gray-400 hover:text-purple-400 transition-colors duration-200 hover:scale-110 transform"
+                aria-label="CSAG on Instagram"
+                title="Instagram"
+                rel="noopener noreferrer"
               >
                 <Instagram className="h-6 w-6" />
               </Link>
@@ -89,13 +101,19 @@ export default function Footer() {
                 target="_blank"
                 href="https://www.youtube.com/@childsurvivalaidghana"
                 className="text-gray-400 hover:text-red-500 transition-colors duration-200 hover:scale-110 transform"
+                aria-label="CSAG on YouTube"
+                title="YouTube"
+                rel="noopener noreferrer"
               >
                 <Youtube className="h-6 w-6" />
               </Link>
               <Link
                 target="_blank"
-                href="https://www.linkedin.com/company/child-survival-aid-ghana?originalSubdomain=gh "
+                href="https://www.linkedin.com/company/child-survival-aid-ghana?originalSubdomain=gh"
                 className="text-gray-400 hover:text-blue-400 transition-colors duration-200 hover:scale-110 transform"
+                aria-label="CSAG on LinkedIn"
+                title="LinkedIn"
+                rel="noopener noreferrer"
               >
                 <Linkedin className="h-6 w-6" />
               </Link>

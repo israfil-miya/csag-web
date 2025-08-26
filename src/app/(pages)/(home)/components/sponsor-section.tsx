@@ -60,10 +60,10 @@ export default function SponsorSection() {
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
             aria-label="Partner logos"
           >
-            {supporters.map((p, i) => (
+            {supporters.slice(0, 6).map((p, i) => (
               <div
                 key={p.name}
-                className="group relative bg-white border border-gray-100 rounded-lg p-4 flex items-center justify-center h-28 hover:border-csag-primary/30 transition-all duration-300 hover:translate-y-[-2px]"
+                className="group relative bg-gradient-to-br from-white to-gray-50 border border-gray-100 rounded-lg p-4 flex items-center justify-center h-28 hover:border-csag-primary/30 transition-all duration-300 hover:translate-y-[-2px]"
                 style={{ animationDelay: `${0.2 + i * 0.035}s` }}
               >
                 <Image
@@ -72,7 +72,7 @@ export default function SponsorSection() {
                   width={140}
                   height={70}
                   loading="lazy"
-                  className="max-h-12 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                  className="max-h-12 w-auto object-contain filter drop-shadow-[0_0_0.5px_rgba(0,0,0,0.35)] grayscale group-hover:grayscale-0 transition-all duration-300"
                 />
                 <span className="sr-only">{p.name}</span>
               </div>

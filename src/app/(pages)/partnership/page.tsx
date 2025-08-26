@@ -24,14 +24,14 @@ export const metadata = {
     description:
       "Join CSAG and help scale impact across rural communities in Ghana.",
     url: "/partnership",
-    images: [{ url: "/images/csag-logo-no-bg.png", width: 800, height: 800 }],
+    images: [{ url: "/images/csag-logo-no-bg.webp", width: 800, height: 800 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Become a Partner — CSAG",
     description:
       "Join CSAG and help scale impact across rural communities in Ghana.",
-    images: ["/images/csag-logo-no-bg.png"],
+    images: ["/images/csag-logo-no-bg.webp"],
   },
 };
 
@@ -64,7 +64,7 @@ export default function PartnershipPage() {
             <div className="mt-8 flex gap-4">
               <Link
                 href="#how"
-                className="bg-csag-accent hover:bg-csag-accent-light text-white font-bold py-3 px-6 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
+                className="bg-csag-accent-dark hover:bg-csag-accent-darker text-white font-bold py-3 px-6 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
               >
                 How to Partner
               </Link>
@@ -78,8 +78,8 @@ export default function PartnershipPage() {
           </div>
           <div className="relative aspect-[16/10] rounded-minimal overflow-hidden bg-gray-100">
             <Image
-              src="/images/photoshoot/boy-filled-with-joy.jpg"
-              alt="Partners supporting education in Ghana"
+              src="/images/photoshoot/boy-filled-with-joy.webp"
+              alt="A boy filled with joy"
               fill
               className="object-cover"
             />
@@ -202,7 +202,7 @@ export default function PartnershipPage() {
           </p>
           <Link
             href="/about#contact"
-            className="inline-block bg-csag-accent hover:bg-csag-accent-light text-white font-bold py-3 px-8 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
+            className="inline-block bg-csag-accent-dark hover:bg-csag-accent-darker text-white font-bold py-3 px-8 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
           >
             Contact Us
           </Link>

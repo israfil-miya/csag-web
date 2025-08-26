@@ -7,7 +7,7 @@ export default function PartnerBanner() {
       className="relative w-full bg-cover bg-center bg-no-repeat text-white overflow-hidden"
       style={{
         backgroundImage:
-          "url('/images/photoshoot/watching-over-new-books.jpg')",
+          "url('/images/photoshoot/watching-over-new-books.webp')",
       }}
     >
       {/* Gradient Overlay */}
@@ -15,7 +15,7 @@ export default function PartnerBanner() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-32 text-center">
         <div className="animate-fade-in">
-          <span className="inline-block bg-csag-accent text-white font-bold text-sm px-6 py-2 rounded-minimal mb-8">
+          <span className="inline-block bg-csag-accent-dark text-white font-bold text-sm px-6 py-2 rounded-minimal mb-8">
             #WE NEED YOUR HELP
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold leading-tight mb-8">
@@ -25,7 +25,9 @@ export default function PartnerBanner() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up">
             <Link
               href="/donate"
-              className="bg-csag-accent hover:bg-csag-accent-light text-white font-bold py-4 px-10 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
+              className="bg-csag-accent-dark hover:bg-csag-accent-darker text-white font-bold py-4 px-10 rounded-minimal transition-all duration-300 hover:translate-y-[-2px]"
+              aria-label="Donate to support CSAG"
+              title="Donate"
             >
               DONATE NOW
             </Link>

@@ -3,28 +3,53 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Our Projects — Child Survival Aid Ghana",
-  description:
-    "Browse completed and ongoing CSAG initiatives advancing learning outcomes in rural Ghana.",
-  alternates: { canonical: "/our-projects" },
-  openGraph: {
-    title: "Our Projects — CSAG",
-    description:
-      "Browse completed and ongoing CSAG initiatives advancing learning outcomes in rural Ghana.",
-    url: "/our-projects",
-    images: [{ url: "/images/csag-logo-no-bg.png", width: 1200, height: 800 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Our Projects — CSAG",
-    description:
-      "Browse completed and ongoing CSAG initiatives advancing learning outcomes in rural Ghana.",
-    images: ["/images/csag-logo-no-bg.png"],
-  },
-};
+// metadata is generated dynamically in generateMetadata below
 
-export default function OurProjectPage() {
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string | string[] }>;
+}) {
+  const sp = await searchParams;
+  const pageParam =
+    typeof sp?.page === "string"
+      ? sp.page
+      : Array.isArray(sp?.page)
+      ? sp.page[0]
+      : undefined;
+  const page = Math.max(1, parseInt(pageParam || "1", 10) || 1);
+  const suffix = page > 1 ? `?page=${page}` : "";
+  const url = `/our-projects${suffix}`;
+  return {
+    title: "Our Projects — Child Survival Aid Ghana",
+    description:
+      "Browse completed and ongoing CSAG initiatives advancing learning outcomes in rural Ghana.",
+    alternates: { canonical: url },
+    openGraph: {
+      title: "Our Projects — CSAG",
+      description:
+        "Browse completed and ongoing CSAG initiatives advancing learning outcomes in rural Ghana.",
+      url,
+      images: [
+        { url: "/images/csag-logo-no-bg.webp", width: 1200, height: 800 },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Our Projects — CSAG",
+      description:
+        "Browse completed and ongoing CSAG initiatives advancing learning outcomes in rural Ghana.",
+      images: ["/images/csag-logo-no-bg.webp"],
+    },
+  } as const;
+}
+
+export default async function OurProjectPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string | string[] }>;
+}) {
+  const sp = await searchParams;
   // Ongoing projects first, then the rest by newest date
   const sorted = [...projects].sort((a, b) => {
     const pa = a.status === "Ongoing" ? 0 : 1;
@@ -32,6 +57,25 @@ export default function OurProjectPage() {
     if (pa !== pb) return pa - pb;
     return b.date.localeCompare(a.date);
   });
+  // Pagination params
+  const pageParam =
+    typeof sp?.page === "string"
+      ? sp.page
+      : Array.isArray(sp?.page)
+      ? sp.page[0]
+      : undefined;
+  const page = Math.max(1, parseInt(pageParam || "1", 10) || 1);
+  const pageSize = 6;
+  const totalPages = Math.max(1, Math.ceil(sorted.length / pageSize));
+  const safePage = Math.min(page, totalPages);
+  const sliceStart = (safePage - 1) * pageSize;
+  const pageItems = sorted.slice(sliceStart, sliceStart + pageSize);
+  const makeHref = (p: number) => {
+    const params = new URLSearchParams();
+    if (p > 1) params.set("page", String(p));
+    const qs = params.toString();
+    return `/our-projects${qs ? `?${qs}` : ""}`;
+  };
   return (
     <section className="py-24 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -51,7 +95,7 @@ export default function OurProjectPage() {
         </div>
 
         <div className="divide-y divide-gray-200">
-          {sorted.map((w, i) => (
+          {pageItems.map((w, i) => (
             <article
               key={w.slug}
               className="py-10 first:pt-0 flex flex-col md:flex-row gap-8 md:items-start animate-slide-up"
@@ -106,8 +150,13 @@ export default function OurProjectPage() {
                   <Link
                     href={`/our-projects/${w.slug}`}
                     className="inline-flex items-center text-csag-primary font-semibold text-sm hover:text-csag-primary-dark transition-colors group relative z-10 align-middle"
+                    aria-label={`Read more about ${w.title}`}
+                    title={`Read more about ${w.title}`}
                   >
-                    <p>Read more</p>
+                    <span>
+                      Read more
+                      <span className="sr-only"> about {w.title}</span>
+                    </span>
                     <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
@@ -115,6 +164,54 @@ export default function OurProjectPage() {
             </article>
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <nav
+            className="mt-12 flex items-center justify-center gap-2"
+            aria-label="Pagination"
+          >
+            <Link
+              aria-disabled={safePage === 1}
+              className={`px-3 py-1 rounded-minimal border text-sm ${
+                safePage === 1
+                  ? "pointer-events-none opacity-50 border-gray-200 text-gray-400"
+                  : "border-gray-300 hover:border-gray-400"
+              }`}
+              href={makeHref(Math.max(1, safePage - 1))}
+            >
+              Previous
+            </Link>
+            {Array.from({ length: totalPages }).map((_, i) => {
+              const p = i + 1;
+              const active = p === safePage;
+              return (
+                <Link
+                  key={p}
+                  href={makeHref(p)}
+                  className={`px-3 py-1 rounded-minimal border text-sm ${
+                    active
+                      ? "bg-csag-primary text-white border-csag-primary"
+                      : "border-gray-300 hover:border-gray-400"
+                  }`}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {p}
+                </Link>
+              );
+            })}
+            <Link
+              aria-disabled={safePage === totalPages}
+              className={`px-3 py-1 rounded-minimal border text-sm ${
+                safePage === totalPages
+                  ? "pointer-events-none opacity-50 border-gray-200 text-gray-400"
+                  : "border-gray-300 hover:border-gray-400"
+              }`}
+              href={makeHref(Math.min(totalPages, safePage + 1))}
+            >
+              Next
+            </Link>
+          </nav>
+        )}
       </div>
     </section>
   );

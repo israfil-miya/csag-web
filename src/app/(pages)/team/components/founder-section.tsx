@@ -23,7 +23,7 @@ export default function FounderSection() {
             <div className="lg:w-1/3">
               <div className="relative h-96 lg:h-full">
                 <Image
-                  src="/images/emmanuel_adika_benedict.jpeg"
+                  src="/images/emmanuel_adika_benedict.webp"
                   alt="CSAG Founder"
                   className="w-full h-full object-cover"
                   width={400}
