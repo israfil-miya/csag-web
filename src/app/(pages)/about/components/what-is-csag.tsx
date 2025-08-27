@@ -22,7 +22,7 @@ export default function WhatIsCSAG() {
               Our <span className="text-csag-accent">Story</span>
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-              Since 2015, <strong>Child Survival Aid Ghana (CSAG)</strong> has
+              Since 2012, <strong>Child Survival Aid Ghana (CSAG)</strong> has
               been on a mission to bring hope and education to children in rural
               Ghana. We believe every child, no matter their background,
               deserves a chance to learn and grow. Through our work, we’ve seen

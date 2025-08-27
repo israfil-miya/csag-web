@@ -24,7 +24,7 @@ export default function AboutSection() {
               Who We <span className="text-csag-accent">Are</span>
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-              Since 2015 we have worked alongside schools and families in rural
+              Since 2012 we have worked alongside schools and families in rural
               Ghana to remove the barriers that keep children out of classrooms.
               We focus on literacy, foundational skills and confidence.
             </p>

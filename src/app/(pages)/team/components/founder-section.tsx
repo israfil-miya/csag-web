@@ -1,3 +1,4 @@
+import moment from "moment-timezone";
 import Image from "next/image";
 
 export default function FounderSection() {
@@ -48,7 +49,7 @@ export default function FounderSection() {
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
                   Emmanuel Adika Benedict founded Child Survival Aid Ghana in
-                  2005 with a simple yet powerful vision: to ensure that every
+                  2000 with a simple yet powerful vision: to ensure that every
                   child in rural Ghana has access to quality education,
                   regardless of their economic circumstances.
                 </p>
@@ -83,7 +84,7 @@ export default function FounderSection() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                   <div>
                     <div className="text-2xl font-bold text-csag-primary">
-                      18+
+                      {moment().diff("2000-01-01", "years")}+
                     </div>
                     <div className="text-sm text-gray-600">
                       Years of Service
@@ -91,7 +92,7 @@ export default function FounderSection() {
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-csag-primary">
-                      875K+
+                      150K+
                     </div>
                     <div className="text-sm text-gray-600">Children Helped</div>
                   </div>

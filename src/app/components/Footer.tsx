@@ -9,6 +9,7 @@ import {
   Twitter,
   Youtube,
 } from "lucide-react";
+import moment from "moment-timezone";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -234,8 +235,8 @@ export default function Footer() {
 
         <div className="py-8 border-t border-gray-700 text-center text-gray-400 text-sm space-y-3">
           <p>
-            © 2015-{new Date().getFullYear()} Child Survival Aid Ghana. All
-            rights reserved.
+            © 2012-{moment().year()} Child Survival Aid Ghana. All rights
+            reserved.
           </p>
           <p className="space-x-4">
             <Link
