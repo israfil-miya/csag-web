@@ -122,7 +122,7 @@ export async function buildBrandedEmail(
     .join("");
 
   const logoBlock = logo
-    ? `<img src="cid:csag-logo" width="48" height="48" alt="CSAG Logo" style="display:block;border:0;outline:none;width:48px;height:48px;" />`
+    ? `<img src="cid:csag-logo" width="140" height="40" alt="Child Survival Aid Ghana logo" style="display:block;border:0;outline:none;width:140px;height:40px;object-fit:contain;" />`
     : "";
 
   const html = `<!doctype html>

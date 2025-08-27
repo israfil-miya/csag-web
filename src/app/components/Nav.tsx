@@ -143,23 +143,29 @@ function Nav() {
     <div className="flex items-center align-middle justify-between text-foreground p-4 px-6 bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
       <div
         onClick={() => router.push("/")}
-        className="flex cursor-pointer items-center space-x-4"
+        className="flex cursor-pointer items-center"
       >
-        <Image
-          src="/images/csag-logo-no-bg.webp"
-          alt="Logo"
-          width={80}
-          height={80}
-          className="hover:scale-105 transition-transform duration-200"
-          sizes="80px"
-          quality={70}
-        />
-        <h2 className="text-2xl font-bold tracking-wide">
+        <div
+          className="relative h-10 w-[160px] sm:h-11 sm:w-[190px] md:h-12 md:w-[220px]"
+          aria-label="Child Survival Aid Ghana"
+          title="Child Survival Aid Ghana"
+        >
+          <Image
+            src="/images/csag-logo-no-bg.webp"
+            alt="Child Survival Aid Ghana logo"
+            fill
+            priority
+            className="object-contain hover:scale-[1.02] transition-transform duration-200"
+            sizes="(max-width: 640px) 160px, (max-width: 768px) 190px, 220px"
+            quality={80}
+          />
+        </div>
+        {/* <h2 className="text-2xl font-bold tracking-wide">
           <span className="md:block hidden uppercase font-sans">
             Child Survival Aid Ghana
           </span>
           <span className="md:hidden block">CSAG</span>
-        </h2>
+        </h2> */}
       </div>
       <div className="items-center text-lg gap-x-16 font-semibold xl:flex hidden">
         <nav className="space-x-8 flex flex-row items-center">

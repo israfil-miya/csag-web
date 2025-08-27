@@ -27,7 +27,7 @@ export const defaultSeo = {
         url: `${siteUrl}/images/csag-logo-no-bg.webp`,
         width: 800,
         height: 800,
-        alt: "CSAG Logo",
+        alt: "Child Survival Aid Ghana logo",
       },
     ],
   },

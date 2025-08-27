@@ -47,21 +47,20 @@ export default function Footer() {
         <div className="py-16 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-6">
-              <Image
-                src="/images/csag-logo-no-bg.webp"
-                alt="CSAG Logo"
-                width={50}
-                height={50}
-                className="mr-3"
-                sizes="50px"
-                quality={70}
-              />
-              <p
-                className="text-xl font-bold text-csag-accent-light tracking-wide"
+              <div
+                className="relative h-8 w-[160px] sm:h-9 sm:w-[180px]"
                 aria-label="Child Survival Aid Ghana"
+                title="Child Survival Aid Ghana"
               >
-                CSAG
-              </p>
+                <Image
+                  src="/images/csag-logo-no-bg.webp"
+                  alt="Child Survival Aid Ghana logo"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 160px, 180px"
+                  quality={80}
+                />
+              </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Child Survival Aid Ghana is a registered National Non-Profit
