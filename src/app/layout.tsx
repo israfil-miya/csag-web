@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
+import StructuredData from "./structured-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://csaghana.org"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || ""),
   title: {
     default: "Child Survival Aid Ghana (CSAG)",
     template: "%s | CSAG",
@@ -80,6 +81,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Global JSON-LD structured data */}
+        <StructuredData />
         {children}
       </body>
     </html>

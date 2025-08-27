@@ -21,12 +21,12 @@ export async function generateMetadata({
   const suffix = page > 1 ? `?page=${page}` : "";
   const url = `/our-projects${suffix}`;
   return {
-    title: "Our Projects — Child Survival Aid Ghana",
+    title: "Our Projects | Child Survival Aid Ghana",
     description:
       "Browse completed and ongoing CSAG initiatives advancing learning outcomes in rural Ghana.",
     alternates: { canonical: url },
     openGraph: {
-      title: "Our Projects — CSAG",
+      title: "Our Projects | CSAG",
       description:
         "Browse completed and ongoing CSAG initiatives advancing learning outcomes in rural Ghana.",
       url,
@@ -36,7 +36,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Our Projects — CSAG",
+      title: "Our Projects | CSAG",
       description:
         "Browse completed and ongoing CSAG initiatives advancing learning outcomes in rural Ghana.",
       images: ["/images/csag-logo-no-bg.webp"],

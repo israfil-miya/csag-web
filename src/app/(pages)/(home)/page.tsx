@@ -8,7 +8,7 @@ import PartnerBanner from "./components/partner-banner";
 import SponsorSection from "./components/sponsor-section";
 
 export const metadata = {
-  title: "Child Survival Aid Ghana (CSAG) — Education for Rural Communities",
+  title: "Child Survival Aid Ghana (CSAG) | Education for Rural Communities",
   description:
     "CSAG is a Ghanaian non-profit improving access to quality education in rural communities through books, safe learning spaces, and community-driven programs.",
   alternates: { canonical: "/" },

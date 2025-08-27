@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/seo";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -56,9 +57,36 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return notFound();
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    url: `${siteUrl}/blog/${slug}`,
+    headline: post.data.title,
+    image: post.data.thumbnail
+      ? [new URL(post.data.thumbnail, siteUrl).toString()]
+      : undefined,
+    datePublished: post.data.date,
+    dateModified: post.data.date,
+    author: post.data.author
+      ? { "@type": "Person", name: post.data.author }
+      : { "@type": "Organization", name: "CSAG" },
+    description: post.data.excerpt || post.data.title,
+    publisher: {
+      "@type": "Organization",
+      name: "Child Survival Aid Ghana (CSAG)",
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/images/csag-logo-no-bg.webp`,
+      },
+    },
+  } as const;
 
   return (
     <article className="py-24 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <div className="max-w-3xl mx-auto">
         <div className="mb-8">
           <Link

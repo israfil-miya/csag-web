@@ -19,12 +19,12 @@ export async function generateMetadata({
   const suffix = page > 1 ? `?page=${page}` : "";
   const url = `/blog${suffix}`;
   return {
-    title: "Blog & News — Child Survival Aid Ghana",
+    title: "Blog & News | Child Survival Aid Ghana",
     description:
       "Stories, updates, and impact from CSAG’s projects and communities across Ghana.",
     alternates: { canonical: url },
     openGraph: {
-      title: "Blog & News — CSAG",
+      title: "Blog & News | CSAG",
       description:
         "Stories, updates, and impact from CSAG’s projects and communities across Ghana.",
       url,
@@ -34,7 +34,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Blog & News — CSAG",
+      title: "Blog & News | CSAG",
       description:
         "Stories, updates, and impact from CSAG’s projects and communities across Ghana.",
       images: ["/images/csag-logo-no-bg.webp"],

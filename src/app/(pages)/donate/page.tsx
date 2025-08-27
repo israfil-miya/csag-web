@@ -22,7 +22,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Donate — Support Education in Rural Ghana",
+  title: "Donate | Child Survival Aid Ghana",
   description:
     "Every gift helps educate a child in rural Ghana. Donate once or monthly via GlobalGiving or use our bank transfer details.",
   alternates: { canonical: "/donate" },

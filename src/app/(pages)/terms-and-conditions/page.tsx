@@ -1,17 +1,17 @@
 export const metadata = {
-  title: "Terms & Conditions | CSAG",
+  title: "Terms & Conditions | Child Survival Aid Ghana",
   description:
     "Terms and conditions for using the Child Survival Aid Ghana website.",
   alternates: { canonical: "/terms-and-conditions" },
   openGraph: {
-    title: "Terms & Conditions — CSAG",
+    title: "Terms & Conditions | CSAG",
     description:
       "Terms and conditions for using the Child Survival Aid Ghana website.",
     url: "/terms-and-conditions",
   },
   twitter: {
     card: "summary",
-    title: "Terms & Conditions — CSAG",
+    title: "Terms & Conditions | CSAG",
     description:
       "Terms and conditions for using the Child Survival Aid Ghana website.",
   },
@@ -45,7 +45,7 @@ export default function TermsAndConditionsPage() {
           <p>
             These terms and conditions outline the rules and regulations for the
             use of Child Survival Aid Ghana&apos;s Website, located at
-            https://csaghana.org/.
+            {process.env.NEXT_PUBLIC_BASE_URL || "https://csaghana.org"}.
           </p>
           <p>
             By accessing this website, we assume you accept these terms and

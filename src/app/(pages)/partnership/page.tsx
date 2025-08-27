@@ -15,12 +15,12 @@ import Link from "next/link";
 import { supporters } from "../about/content/about-content";
 
 export const metadata = {
-  title: "Become a Partner — Child Survival Aid Ghana",
+  title: "Become a Partner | Child Survival Aid Ghana",
   description:
     "Collaborate with CSAG to expand quality education for children in rural Ghana.",
   alternates: { canonical: "/partnership" },
   openGraph: {
-    title: "Become a Partner — CSAG",
+    title: "Become a Partner | CSAG",
     description:
       "Join CSAG and help scale impact across rural communities in Ghana.",
     url: "/partnership",
@@ -28,7 +28,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Become a Partner — CSAG",
+    title: "Become a Partner | CSAG",
     description:
       "Join CSAG and help scale impact across rural communities in Ghana.",
     images: ["/images/csag-logo-no-bg.webp"],

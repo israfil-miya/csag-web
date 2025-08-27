@@ -14,7 +14,7 @@ import { TEAM_MEMBERS } from "../team/content/team-content";
 import VolunteerForm from "./components/volunteer-form";
 
 export const metadata = {
-  title: "Volunteer — Child Survival Aid Ghana",
+  title: "Volunteer | Child Survival Aid Ghana",
   description:
     "Volunteer with CSAG to support education, health, and community development in rural Ghana.",
   alternates: { canonical: "/volunteer" },
@@ -191,7 +191,7 @@ export default function VolunteerPage() {
               Words from Past Volunteers
             </h2>
             <p className="text-center text-gray-600 mt-2">
-              Hear how volunteering with CSAG made a difference for them — and
+              Hear how volunteering with CSAG made a difference for them and
               their communities.
             </p>
           </div>
