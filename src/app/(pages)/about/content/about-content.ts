@@ -133,6 +133,46 @@ export const programmes: IconEntry[] = [
   },
 ];
 
+// Core Values
+export const coreValues: IconEntry[] = [
+  {
+    title: "Results-Oriented",
+    text: "We rise above challenges, persevering to achieve success in all our endeavors.",
+  },
+  {
+    title: "Teamwork",
+    text: "Collaboration is our cornerstone; we pool our efforts for the collective benefit.",
+  },
+  {
+    title: "Community Engagement",
+    text: "We establish partnerships with every community we serve, fostering meaningful collaboration.",
+  },
+  {
+    title: "Child-Centered Approach",
+    text: "Each child is unique, and we prioritize catering to their individual needs.",
+  },
+  {
+    title: "Sustainability",
+    text: "Through education and learning, we empower self-assurance and independence.",
+  },
+  {
+    title: "Long-Term Focus",
+    text: "Our solutions are geared towards enduring impact, steering clear of temporary fixes.",
+  },
+  {
+    title: "Accountability",
+    text: "Committing to responsible stewardship of resources and measuring impact.",
+  },
+  {
+    title: "Integrity",
+    text: "Upholding honesty and transparency in all actions.",
+  },
+  {
+    title: "Collaboration",
+    text: "Fostering strong partnerships with communities, organizations, and stakeholders.",
+  },
+];
+
 // Central partner data for easier maintenance / future CMS hookup
 export const featuredPartner = {
   name: "Government of Australia",

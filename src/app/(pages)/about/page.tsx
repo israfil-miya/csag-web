@@ -5,6 +5,7 @@ import EducationImpact from "./components/education-impact";
 import MissionVisionGoals from "./components/mission-vision-goals";
 import OurImpact from "./components/our-impact";
 import OurPartners from "./components/our-partners";
+import ValuesSection from "./components/values";
 import WhatIsCSAG from "./components/what-is-csag";
 import WhatWeDoSection from "./components/what-we-do";
 
@@ -44,6 +45,10 @@ export default function AboutPage() {
       {/* Why Education & Values */}
       <div id="why" aria-labelledby="why-heading">
         <EducationImpact />
+      </div>
+      {/* Values */}
+      <div id="values" aria-labelledby="values-heading">
+        <ValuesSection />
       </div>
 
       {/* Impact Metrics */}

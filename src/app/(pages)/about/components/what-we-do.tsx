@@ -68,12 +68,7 @@ export default function WhatWeDoSection() {
                     <div className="absolute left-4 top-1 w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center text-csag-primary">
                       <Icon className="h-4 w-4" />
                     </div>
-                    <h3 className="font-semibold text-gray-900">
-                      <span className="mr-2 inline-flex items-center justify-center w-6 h-6 rounded-full bg-csag-primary/10 text-csag-primary text-[11px] font-bold">
-                        {i + 1}
-                      </span>
-                      {p.title}
-                    </h3>
+                    <h3 className="font-semibold text-gray-900">{p.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed mt-2">
                       {p.text}
                     </p>
@@ -90,9 +85,6 @@ export default function WhatWeDoSection() {
                       ].join(" ")}
                     >
                       <h3 className="font-semibold text-gray-900 text-lg">
-                        <span className="mr-2 inline-flex items-center justify-center w-7 h-7 rounded-full bg-csag-primary/10 text-csag-primary text-xs font-bold align-middle">
-                          {i + 1}
-                        </span>
                         {p.title}
                       </h3>
                       <p className="text-gray-600 text-sm leading-relaxed mt-2">
