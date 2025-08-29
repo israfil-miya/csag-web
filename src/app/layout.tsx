@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 
+import GtagRouteTracker from "./components/GtagRouteTracker";
 import "./globals.css";
 import StructuredData from "./structured-data";
 
@@ -81,8 +83,23 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Google Ads gtag (AW-367110803) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-367110803"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-367110803');
+          `}
+        </Script>
         {/* Global JSON-LD structured data */}
         <StructuredData />
+        {/* Client-side route change tracker for SPA pageviews */}
+        <GtagRouteTracker />
         {children}
       </body>
     </html>
