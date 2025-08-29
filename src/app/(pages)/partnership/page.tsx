@@ -78,7 +78,7 @@ export default function PartnershipPage() {
           </div>
           <div className="relative aspect-[16/10] rounded-minimal overflow-hidden bg-gray-100">
             <Image
-              src="/images/photoshoot/boy-filled-with-joy.webp"
+              src="/images/photoshoot/partnership_with_australian_aid.webp"
               alt="A boy filled with joy"
               fill
               className="object-cover"

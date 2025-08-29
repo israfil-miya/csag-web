@@ -6,6 +6,7 @@ import MissionVisionGoals from "./components/mission-vision-goals";
 import OurImpact from "./components/our-impact";
 import OurPartners from "./components/our-partners";
 import WhatIsCSAG from "./components/what-is-csag";
+import WhatWeDoSection from "./components/what-we-do";
 
 export const metadata = {
   title: "About Us | Child Survival Aid Ghana",
@@ -33,6 +34,11 @@ export default function AboutPage() {
       {/* Approach */}
       <div id="approach" aria-labelledby="approach-heading">
         <ApproachSection />
+      </div>
+
+      {/* What We Do / Programmes */}
+      <div id="programmes" aria-labelledby="programmes-heading">
+        <WhatWeDoSection />
       </div>
 
       {/* Why Education & Values */}

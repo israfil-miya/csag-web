@@ -384,7 +384,7 @@ export default function DonatePage() {
                 <Hash className="h-5 w-5 mt-0.5 text-csag-primary" />
                 <p>
                   <span className="font-semibold">Account Number:</span>{" "}
-                  <span className="font-mono tracking-wide">208101919220</span>{" "}
+                  <span className="font-mono tracking-wide">3208002015161</span>{" "}
                   (DOLLAR)
                 </p>
               </div>
@@ -392,7 +392,7 @@ export default function DonatePage() {
                 <Hash className="h-5 w-5 mt-0.5 text-csag-primary" />
                 <p>
                   <span className="font-semibold">Account Number:</span>{" "}
-                  <span className="font-mono tracking-wide">208101919420</span>{" "}
+                  <span className="font-mono tracking-wide">3208004031047</span>{" "}
                   (EURO)
                 </p>
               </div>
@@ -402,7 +402,7 @@ export default function DonatePage() {
                 <Hash className="h-5 w-5 mt-0.5 text-csag-primary" />
                 <p>
                   <span className="font-semibold">Account Number:</span>{" "}
-                  <span className="font-mono tracking-wide">208101919110</span>{" "}
+                  <span className="font-mono tracking-wide">3208001024737</span>{" "}
                   (CEDI)
                 </p>
               </div>
@@ -410,7 +410,7 @@ export default function DonatePage() {
                 <Hash className="h-5 w-5 mt-0.5 text-csag-primary" />
                 <p>
                   <span className="font-semibold">Account Number:</span>{" "}
-                  <span className="font-mono tracking-wide">208101919330</span>{" "}
+                  <span className="font-mono tracking-wide">3208003022875</span>{" "}
                   (Pound)
                 </p>
               </div>

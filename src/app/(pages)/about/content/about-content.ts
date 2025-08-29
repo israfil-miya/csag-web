@@ -101,6 +101,38 @@ export const reasons = [
   },
 ];
 
+// Programs / What We Do
+export const programmes: IconEntry[] = [
+  {
+    title: "Supporting Schools Programs",
+    text: "We provide assistance to schools to enhance their educational resources and infrastructure, ensuring that students have access to a quality learning environment.",
+  },
+  {
+    title: "Girls' Reading Club Programs",
+    text: "Our initiative focuses on encouraging young girls to develop a love for reading by creating a supportive community that fosters literacy and confidence.",
+  },
+  {
+    title: "School Desks Project",
+    text: "We are committed to enabling a better learning environment by providing students with proper school desks, ensuring they have a comfortable and conducive space for studying.",
+  },
+  {
+    title: "Water & Sanitation Project",
+    text: "We prioritize clean water and sanitation facilities in schools, promoting health and hygiene among students and creating a safer school environment.",
+  },
+  {
+    title: "Book Distribution Program",
+    text: "We spread the gift of knowledge by distributing books to schools and communities, ensuring that every student has access to reading materials that spark their imagination and learning.",
+  },
+  {
+    title: "Building Schools and Computer Labs Project",
+    text: "We invest in building new schools and equipping them with computer labs, helping students gain essential skills for the modern world.",
+  },
+  {
+    title: "Renovation of School & Library Project",
+    text: "We focus on renovating school libraries to create inviting, resource-rich spaces that encourage students to explore and develop their love for reading and learning.",
+  },
+];
+
 // Central partner data for easier maintenance / future CMS hookup
 export const featuredPartner = {
   name: "Government of Australia",
