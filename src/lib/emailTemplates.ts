@@ -38,7 +38,7 @@ async function getLogoAttachment() {
       process.cwd(),
       "public",
       "images",
-      "csag-logo-no-bg.webp"
+      "csag-icon-logo-no-bg.png"
     );
     const buf = await fs.readFile(logoPath);
     return {
@@ -122,7 +122,7 @@ export async function buildBrandedEmail(
     .join("");
 
   const logoBlock = logo
-    ? `<img src="cid:csag-logo" width="140" height="40" alt="Child Survival Aid Ghana logo" style="display:block;border:0;outline:none;width:140px;height:40px;object-fit:contain;" />`
+    ? `<img src="cid:csag-logo" width="48" height="48" alt="Child Survival Aid Ghana logo" style="display:block;border:0;outline:none;width:48px;height:48px;object-fit:cover;vertical-align:middle;" />`
     : "";
 
   const html = `<!doctype html>
@@ -154,18 +154,12 @@ export async function buildBrandedEmail(
               <td style="padding:16px 24px 16px 28px;border-bottom:1px solid ${
                 BRAND.border
               };">
-                <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
-                  <tr>
-                    <td valign="middle" style="width:48px;">
-                      ${logoBlock}
-                    </td>
-                    <td valign="middle" style="padding-left:12px;font:700 16px/20px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto;color:${
-                      BRAND.primary
-                    };">
-                      Child Survival Aid Ghana
-                    </td>
-                  </tr>
-                </table>
+                <div>
+                  <span style="display:inline-block;vertical-align:middle;">${logoBlock}</span>
+                  <span style="display:inline-block;vertical-align:middle;margin-left:10px;font:700 16px/20px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto;color:${
+                    BRAND.primary
+                  }">Child Survival Aid Ghana</span>
+                </div>
               </td>
             </tr>
 
