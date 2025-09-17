@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 const GA_ADS_ID = process.env.NEXT_PUBLIC_GA_ADS_ID;
 const GTAG_ID = process.env.NEXT_PUBLIC_GTAG_ID;
 const GTAG_SCRIPT_ID = GTAG_ID || GA_ADS_ID;
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 // Init script: only config once per ID
 const gtagInit = `
@@ -111,6 +112,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Google Tag Manager (noscript) */}
+        {GTM_ID ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        ) : null}
         {GTAG_SCRIPT_ID && (
           <>
             <Script
@@ -122,6 +134,18 @@ export default function RootLayout({
             </Script>
           </>
         )}
+        {/* Google Tag Manager */}
+        {GTM_ID ? (
+          <Script id="gtm" strategy="afterInteractive">
+            {`
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','${GTM_ID}');
+            `}
+          </Script>
+        ) : null}
         <StructuredData />
         <GtagRouteTracker />
         {children}
