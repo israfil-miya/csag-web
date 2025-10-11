@@ -123,7 +123,7 @@ export const TEAM_MEMBERS = [
     socialMedia: "https://www.linkedin.com/in/israfil-miya/",
     imageUrl: "/images/volunteers/israfil_miya.webp",
     testimonial:
-      "Turning code into real-world impact alongside a mission-driven team has been deeply rewarding. I shipped features that improved performance, accessibility, and reach. With every commit, our digital presence felt more alive. This journey showed me how thoughtful engineering can amplify social good, and I'm grateful for the chance to contribute.",
+      "Working with Child Survival Aid Ghana, a non-profit NGO active in a relatively small country in Africa, allowed me to contribute a little to their great mission. This organization helps needy children get a proper education and creates a large community of volunteers and fundraisers, ultimately helping to uplift the rural areas of Ghana. It was an honor to work with the team, where I could utilize my technical skills, especially in web development, for the benefit of the rural people in Ghana. They are certainly doing a virtuous job.",
   },
   {
     id: "15",
