@@ -180,84 +180,109 @@ export const featuredPartner = {
   logo: "/images/partners/australian_aid.webp",
   description:
     "The Government of Australia, through the Australian High Commission's Direct Aid Program (DAP), funded key improvements at Kasunya D/A and R/C Basic Schools. Their support enabled the kindergarten refurbishment, the creation of a modern computer lab, and a renovated library, improving learning spaces and digital access. We sincerely thank DAP for strengthening educational opportunities and the future prospects of children in Shai-Osudoku.",
-  link: "",
+  url: "https://www.dfat.gov.au/development/australias-development-program",
 };
 
-export const supporters: { name: string; logo: string }[] = [
+export const supporters: { name: string; logo: string; url: string }[] = [
   {
     name: "African Library Project",
     logo: "/images/partners/african_library_project.webp",
+    url: "https://www.africanlibraryproject.org/",
   },
   {
     name: "Anike Foundation",
     logo: "/images/partners/anike_foundation.webp",
+    url: "https://anikefoundation.org/",
   },
-  {
-    name: "Australian Aid",
-    logo: "/images/partners/australian_aid.webp",
-  },
+
   {
     name: "Biblionef",
     logo: "/images/partners/biblionef.webp",
+    url: "https://www.biblionefsa.org.za/",
+  },
+  {
+    name: "Elite Sports",
+    logo: "/images/partners/elite_sports.webp",
+    url: "https://www.elitesports.com/",
   },
   {
     name: "Books for Africa",
     logo: "/images/partners/books_for_africa.webp",
+    url: "https://www.booksforafrica.org/",
   },
   {
     name: "Bridge Africa Foundation",
     logo: "/images/partners/bridge_africa_foundation.webp",
+    url: "https://bridgeafricafoundation.org/",
   },
   {
     name: "Chezuba",
     logo: "/images/partners/chezuba.webp",
+    url: "https://chezuba.com/",
+  },
+  {
+    name: "Australian Aid",
+    logo: "/images/partners/australian_aid.webp",
+    url: "https://www.dfat.gov.au/aid",
   },
   {
     name: "Darien Book Aid",
     logo: "/images/partners/darien_book_aid.webp",
+    url: "https://darienbookaid.org/",
   },
   {
-    name: "Derde Wereld Groep",
-    logo: "/images/partners/derde_wereld_groep.webp",
+    name: "Derde Wereldgroep Soest",
+    logo: "/images/partners/derde_wereldgroep_soest.webp",
+    url: "https://www.derdewereldgroepsoest.eu/",
   },
   {
     name: "Education Saves Lives",
     logo: "/images/partners/education_saves_lives.webp",
+    url: "https://educationsaveslives.org/",
   },
   {
     name: "Footprint Possibilities",
     logo: "/images/partners/footprint_possibilities.webp",
+    url: "https://www.footprintpossibilities.org/",
   },
   {
     name: "Ghana Education Service",
     logo: "/images/partners/ghana_education_service.webp",
+    url: "https://ges.gov.gh/",
   },
   {
     name: "Good Deeds Day",
     logo: "/images/partners/good_deeds_day.webp",
+    url: "https://www.good-deeds-day.org/",
   },
   {
     name: "Google",
     logo: "/images/partners/google.webp",
+    url: "https://www.google.org/",
   },
   {
     name: "Government of Ireland International Development Programme",
     logo: "/images/partners/govt_of_ireland.webp",
+    url: "https://www.irishaid.ie/",
   },
   {
-    name: "International Book Project",
+    name: "Intl Book Project",
     logo: "/images/partners/intl_book_project.webp",
+    url: "https://intlbookproject.org/",
   },
   {
     name: "New Zealand Foreign Affairs & Trade",
     logo: "/images/partners/new_zealand_fat.webp",
+    url: "https://www.mfat.govt.nz/en/",
   },
   {
     name: "TechSoup",
     logo: "/images/partners/techsoup.webp",
+    url: "https://www.techsoup.org/",
   },
   {
     name: "Water Charity",
     logo: "/images/partners/water_charity.webp",
+    url: "https://watercharity.org/",
   },
 ];

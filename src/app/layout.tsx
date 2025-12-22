@@ -20,6 +20,7 @@ const GA_ADS_ID = process.env.NEXT_PUBLIC_GA_ADS_ID;
 const GTAG_ID = process.env.NEXT_PUBLIC_GTAG_ID;
 const GTAG_SCRIPT_ID = GTAG_ID || GA_ADS_ID;
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://csaghana.org";
 
 // Init script: only config once per ID
 const gtagInit = `
@@ -35,9 +36,7 @@ const gtagInit = `
 `;
 
 export const metadata: Metadata = {
-  metadataBase: process.env.NEXT_PUBLIC_BASE_URL
-    ? new URL(process.env.NEXT_PUBLIC_BASE_URL)
-    : undefined,
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "Child Survival Aid Ghana (CSAG)",
     template: "%s | CSAG",
@@ -65,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: process.env.NEXT_PUBLIC_BASE_URL || "/",
+    url: BASE_URL,
     siteName: "Child Survival Aid Ghana (CSAG)",
     title: "Child Survival Aid Ghana (CSAG)",
     description:
@@ -98,7 +97,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_BASE_URL || "/",
+    canonical: BASE_URL,
   },
 };
 

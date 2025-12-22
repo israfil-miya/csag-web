@@ -307,22 +307,15 @@ PROJECT OBJECTIVES:
     title: "Mefi-Dedukope New Clinic Project",
     date: "2025-06-11",
     sector: "Health",
-    status: "Ongoing",
+    status: "Completed",
     location: "Mefi-Dedukope, Dangme West district",
     image: "/images/projects/mefi-dedukope-new-clinic-project.webp",
     excerpt:
-      "Constructing a new clinic in Mafi-Dedukope to improve healthcare access, provide modern medical facilities, and promote community health education.",
+      "Constructed a new clinic in Mafi-Dedukope to improve healthcare access, provide modern medical facilities, and promote community health education.",
     description: [
-      "We are excited to announce that we are constructing a new clinic for the people of Mafi-Dedukope! This new facility will replace the old clinic, enhancing healthcare delivery across the entire community. Our goal is to provide residents with access to quality medical services, improving overall health and well-being.",
-      `
-PROJECT OBJECTIVES:
-1. Improved Facilities: The new clinic will feature modern medical equipment and amenities to ensure efficient healthcare services.
-2. Increased Access: By establishing a clinic that is easily accessible, we aim to reduce travel times for patients and ensure timely medical assistance.
-3. Comprehensive Services: The clinic will offer a wide range of healthcare services, from routine check-ups and vaccinations to maternal and child health services.
-4. Community Health Education: We will implement health education programs to inform the community about preventive measures and healthy living practices.
-5. Training Opportunities: The project will include training programs for local health workers, ensuring that they are equipped with the skills necessary to provide excellent care.
-      `,
-      "This initiative is a vital step towards enhancing the health infrastructure in Mafi-Dedukope, ultimately contributing to the well-being of the entire community. Thank you for your support as we work to bring this important project to life!",
+      "The new clinic in Mafi-Dedukope is complete and now operational. The facility replaces the old clinic and provides improved access to primary healthcare, maternal and child health services, and routine medical care for the surrounding community.",
+      "Key achievements include the completion of the clinic building, installation of essential medical equipment, implementation of community health education programs, and the training of local health workers to ensure ongoing, high-quality service delivery.",
+      "We are grateful to our partners, donors, local health authorities, and community members for their support in bringing this project to fruition. The clinic will continue to serve as a cornerstone for improved health outcomes in the area.",
     ],
   },
 ];
