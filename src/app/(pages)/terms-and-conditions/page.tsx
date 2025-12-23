@@ -44,7 +44,7 @@ export default function TermsAndConditionsPage() {
           </p>
           <p>
             These terms and conditions outline the rules and regulations for the
-            use of Child Survival Aid Ghana&apos;s Website, located at
+            use of Child Survival Aid Ghana&apos;s Website, located at{" "}
             {process.env.NEXT_PUBLIC_BASE_URL || "https://csaghana.org"}.
           </p>
           <p>
